@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Architecture</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072931"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072931">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-architecturedoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Architecture: files &amp; folders
+               <span class="doc-hero__title-sub">How the project is organized and where to work</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This guide explains the template structure: what lives in the root, what is inside <code>src/</code>,
+               and where you should (and shouldn’t) edit files.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Intro -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What you’ll learn here</h2>
+                  <p class="doc-p">
+                     We’ll break down the folder hierarchy of <strong>Animmaster Vite Template</strong>:
+                     the project root, the <code>src/</code> directory, components, assets, styles, and scripts.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Rule of thumb</div>
+                     <div class="doc-callout__text">
+                        <strong>Edit:</strong> <code>src/</code> • <strong>Avoid editing:</strong> build modules &amp;
+                        configs unless you know why.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Project root -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="root" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Project root</h2>
+                  <p class="doc-p">
+                     After extracting the archive, you’ll see several folders and configuration files in the project
+                     root.
+                     Here is what they mean:
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><code>src/</code> — the source code of your project. <strong>This is where you
+                              work.</strong></li>
+                        <li><code>template.config.js</code> — user configuration (feature toggles, paths, automation
+                           settings).</li>
+                        <li><code>README.txt</code> — a short “quick start” note. Worth reading once.</li>
+                        <li><code>package.json</code> — npm scripts + dependencies. Avoid editing unless you understand
+                           the impact.</li>
+                        <li><code>vite.config.js</code> — Vite configuration. Usually you don’t touch it.</li>
+                        <li><code>template_modules/</code> — internal build/template modules. <strong>Do not
+                              edit</strong> unless you maintain the template.</li>
+                        <li><code>docker-compose.yml</code> — used only for fullstack/WordPress workflows (if enabled).
+                           Avoid editing without experience.</li>
+                        <li><code>.vscode/</code> — appears after first run (editor settings/snippets if enabled).</li>
+                        <li><code>node_modules/</code> + <code>package-lock.json</code> — created after
+                           <code>npm i</code>. Don’t edit.
+                        </li>
+                        <li><code>zip/</code> — appears after <code>npm run zip</code> (exported zip build output).</li>
+                        <li><code>backend/</code> — appears only if you run fullstack/WordPress modes (contains
+                           WordPress + database data).</li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Naming tip</div>
+                     <div class="doc-callout__text">
+                        Keep the project path clean: use Latin characters, no spaces, and avoid special characters like
+                        <code>#</code> or <code>!</code>.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) src/ overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="src" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Inside <code>src/</code></h2>
+                  <p class="doc-p">
+                     The <code>src/</code> folder contains all source files for the website and the template’s component
+                     system.
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><code>index.html</code> — main entry page of your project.</li>
+                        <li><code>assets/</code> — media files: images, fonts, svg icons, etc.</li>
+                        <li><code>styles/</code> — global styling system (settings, mixins, resets, libraries).</li>
+                        <li><code>js/</code> — global scripts + utilities + framework starters (React/Vue if used).</li>
+                        <li><code>pug/</code> — files for PUG preprocessor (if enabled).</li>
+                        <li><code>php/</code> — PHP components (used when PHP server mode is enabled).</li>
+                        <li><code>projectpage/</code> — template for a generated “project pages” list.</li>
+                        <li><code>files/</code> — everything here gets copied to <code>dist/files</code>.</li>
+                        <li><code>components/</code> — all UI components + layouts + pages (main content lives here).
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Most of your work</div>
+                     <div class="doc-callout__text">
+                        You will mostly edit <code>src/components/</code>, <code>src/styles/</code>,
+                        <code>src/js/</code> and <code>src/assets/</code>.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) components/ -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="components" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Components structure</h2>
+                  <p class="doc-p">
+                     The template uses a component-first approach. UI blocks, effects, and page content are stored
+                     inside <code>src/components/</code>.
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><code>custom/</code> — your own components (recommended place for custom work).</li>
+                        <li><code>templates/</code> — page templates (you can add your own layouts).</li>
+                        <li><code>templates/main/</code> — main layout template (base HTML skeleton).</li>
+                        <li><code>pages/</code> — page content components (each page has its own folder/files).</li>
+                        <li><code>pages/index/</code> — content of the main (index) page.</li>
+                        <li><code>effects/</code> — components for visual effects/animations (extendable).</li>
+                        <li><code>forms/</code> — form-related components (inputs, validation, helpers, etc.).</li>
+                        <li><code>layout/</code> — layout components (header, footer, navigation, etc.).</li>
+
+                        <li><code>wordpress/</code> — WordPress theme/plugin + helpers (used only for fullstack mode if
+                           enabled):
+                           <ul>
+                              <li><code>anim-theme/</code> — WordPress theme</li>
+                              <li><code>anim-plugin/</code> — WordPress plugin</li>
+                              <li><code>*.js</code> — helper files (don’t edit / don’t delete unless you know what
+                                 you’re doing)</li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <p class="doc-p">
+                     Some components may contain <strong>plugins</strong> inside their own folder, for example:
+                     <code>src/components/layout/header/plugins/scroll</code>.
+                  </p>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Good practice</div>
+                     <div class="doc-callout__text">
+                        Create new UI blocks inside <code>src/components/custom/</code> so updates and core files stay
+                        clean.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) assets/ -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="assets" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Assets</h2>
+                  <p class="doc-p">
+                     All project media lives in <code>src/assets/</code>.
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><code>fonts/</code> — local fonts (used by the fonts pipeline).</li>
+                        <li><code>img/</code> — images. Replace <code>favicon.ico</code> with your own.</li>
+                        <li><code>svgicons/</code> — input folder for icon font / SVG sprite workflows.</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) styles/ -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="styles" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Styles</h2>
+                  <p class="doc-p">
+                     Global styling is organized inside <code>src/styles/</code>. The template includes a scalable SCSS
+                     structure:
+                     settings, mixins, reusable includes, resets, and optional libraries.
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><code>style.scss</code> — main global stylesheet (loaded on every page).</li>
+                        <li><code>settings.scss</code> — global tokens/variables and basic design settings.</li>
+                        <li><code>includes/</code> — reusable SCSS/CSS pieces used across the project.</li>
+                        <li><code>fonts/</code> — auto-generated font connection styles (created during build/dev).</li>
+                        <li><code>index.scss</code> — auto-included file (settings + mixins + shared imports).</li>
+                        <li><code>mixins.scss</code>, <code>extends.scss</code> — reusable mixins and placeholders.</li>
+                        <li><code>spritemap.scss</code> — auto-generated helpers for SVG sprite workflow.</li>
+                        <li><code>libs/</code> — CSS libs that can be auto-included if enabled.</li>
+                        <li><code>reset.css</code> — base reset (used unless you switch to another framework/library).
+                        </li>
+                        <li><code>tailwind.css</code> — used only if Tailwind mode is enabled in config.</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 7) js/ -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="scripts" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Scripts</h2>
+                  <p class="doc-p">
+                     Shared JavaScript lives in <code>src/js/</code>. Components can also have their own JS inside their
+                     folder,
+                     but global logic typically goes here.
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><code>app.js</code> — main entry file for global scripts (loaded on every page).</li>
+                        <li><code>common/</code> — shared utilities and helpers.</li>
+                        <li><code>common/functions.js</code> — useful helper functions used across components.</li>
+                        <li><code>react/</code> — starter structure for React workflows (if enabled/used).</li>
+                        <li><code>vue/</code> — starter structure for Vue workflows (if enabled/used).</li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Keep it clean</div>
+                     <div class="doc-callout__text">
+                        If a script belongs to a specific component — keep it inside that component folder.
+                        Global scripts should stay in <code>src/js/</code>.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 8) Quick folder tree (copy/paste snippet) -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="tree" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Quick tree view</h2>
+                  <p class="doc-p">
+                     Here’s a compact overview you can quickly scan:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Project structure</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+root/
+├─ src/
+│  ├─ assets/ (fonts, img, svgicons)
+│  ├─ components/ (custom, templates, pages, effects, forms, layout, wordpress)
+│  │  └─ wordpress/
+│  │     ├─ anim-theme/
+│  │     └─ anim-plugin/
+│  ├─ styles/ (style.scss, settings.scss, mixins, includes, libs)
+│  ├─ js/ (app.js, common/, react/, vue/)
+│  ├─ files/ (copied to dist/files)
+│  ├─ projectpage/
+│  ├─ pug/ (optional)
+│  └─ php/ (optional)
+├─ template.config.js
+├─ package.json
+├─ vite.config.js
+└─ template_modules/</code></pre>
+                  </div>
+               </section>
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Every project you start without a solid foundation costs you time.
+                     Download Animmaster Vite Template and start your next project with a structure that already works.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/settings.html">
+                     Next: Animmaster Vite Template settings template.config.js
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Intro</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#root">Project
+                           root</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#src">Inside
+                           src/</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#components">Components</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#assets">Assets</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#styles">Styles</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#scripts">Scripts</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#tree">Tree
+                           view</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

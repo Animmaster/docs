@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Map</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072924"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072924">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-mapdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Google Maps
+               <span class="doc-hero__title-sub">Markers, popups & custom styles</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This component integrates <strong>Google Maps</strong> into the template.
+               It supports multiple markers, custom icons, zoom-on-click and popup integration.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     The component files are located in
+                     <code>src/components/layout/map</code>.
+                     Inside you’ll find:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS files with map logic and settings.</li>
+                     <li class="doc-list__item">HTML example snippet.</li>
+                     <li class="doc-list__item">SCSS file for map and marker styling.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Google Maps API key -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="apikey" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Google Maps API key</h2>
+
+                  <p class="doc-p">
+                     For full Google Maps functionality you should generate your own API key
+                     and add it to the constant <code>MAP_KEY</code> in the component settings file:
+                  </p>
+
+                  <p class="doc-p">
+                     <code>src/components/layout/map/_settings.js</code>
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Development mode</div>
+                     <div class="doc-callout__text">
+                        You can temporarily work without an API key during development.
+                        For production usage, a valid Google Maps API key is required.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     To render a map, create a wrapper with <code>data-anim-map</code>.
+                     Inside it define the map body and one or more markers.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Single marker map</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-map class="map"&gt;
+
+	&lt;div
+		data-anim-map-marker
+		class="map__marker"
+		data-anim-map-lat="50.449688"
+		data-anim-map-lng="30.52348"
+		data-anim-map-title="Title 1"&gt;
+	&lt;/div&gt;
+
+	&lt;div
+		data-anim-map-body
+		class="map__body"
+		data-anim-map-lat="50.449688"
+		data-anim-map-lng="30.52348"&gt;
+	&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Data attributes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="attributes" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Available data attributes</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item"><code>data-anim-map</code> — map wrapper.</li>
+                     <li class="doc-list__item"><code>data-anim-map-body</code> — element where the map is rendered.
+                     </li>
+                     <li class="doc-list__item"><code>data-anim-map-marker</code> — marker element.</li>
+                     <li class="doc-list__item"><code>data-anim-map-lat</code> / <code>data-anim-map-lng</code> —
+                        coordinates for map center and markers.</li>
+                     <li class="doc-list__item"><code>data-anim-map-title</code> — tooltip title for a marker.</li>
+                     <li class="doc-list__item"><code>data-anim-map-icon</code> — custom marker icon image.</li>
+                     <li class="doc-list__item"><code>data-anim-map-marker-zoom</code> — zoom to marker on click.</li>
+                     <li class="doc-list__item">
+                        <code>data-anim-map-marker-popup</code> — opens a popup on marker click
+                        (see Popup component).
+                     </li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Marker popup -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="popup" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Marker popup integration</h2>
+
+                  <p class="doc-p">
+                     Markers can trigger modal windows. Add
+                     <code>data-anim-map-marker-popup</code> with the popup name.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Marker with popup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div
+	data-anim-map-marker
+	data-anim-map-lat="50.449688"
+	data-anim-map-lng="30.52348"
+	data-anim-map-marker-popup="contactPopup"
+	class="map__marker"&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        The popup name must match the popup component ID.
+                        Make sure the Popup component is included on the page.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Add interactive Google Maps with markers, popups and custom styles.
+                     Download the template and integrate maps faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/form.html">
+                     Next: Form component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#apikey">API
+                           key</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Basic
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#attributes">Attributes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#popup">Marker
+                           popup</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

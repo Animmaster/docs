@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Check box</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072930"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072930">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-checkboxdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Checkbox
+               <span class="doc-hero__title-sub">
+                  Custom styled checkbox with full control over UI
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This component replaces the default browser checkbox with a fully
+               customizable version. It keeps native accessibility while allowing
+               complete control over styling and animations.
+            </p>
+
+            <div class="doc-actions">
+
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="overview" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Overview</h2>
+
+                  <p class="doc-p">
+                     The checkbox component uses a hidden native input element
+                     combined with a styled label to create a custom UI.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Fully customizable design
+                     </li>
+
+                     <li class="doc-list__item">
+                        Accessible and semantic HTML
+                     </li>
+
+                     <li class="doc-list__item">
+                        Smooth check animation
+                     </li>
+
+                     <li class="doc-list__item">
+                        Keyboard focus support
+                     </li>
+
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Basic usage
+                  </h2>
+
+                  <p class="doc-p">
+                     Use a label wrapper with an input and text element inside.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Checkbox HTML
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;label class="checkbox" data-anim-checkbox&gt;
+
+   &lt;input
+      class="checkbox__input"
+      type="checkbox"
+      name="form[]"
+      value="1"
+   &gt;
+
+   &lt;span class="checkbox__text"&gt;
+      Checkbox text
+   &lt;/span&gt;
+
+&lt;/label&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Structure -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="structure" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Structure
+                  </h2>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Component structure
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+.checkbox
+ ├ .checkbox__input
+ └ .checkbox__text
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- States -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="states" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     States
+                  </h2>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Checked state — controlled via :checked
+                     </li>
+
+                     <li class="doc-list__item">
+                        Focus state — visible outline on keyboard focus
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout">
+
+                     <div class="doc-callout__title">
+                        Animation
+                     </div>
+
+                     <div class="doc-callout__text">
+                        The check indicator scales from 0 to 1 using CSS transform.
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Customization -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="custom" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Customization
+                  </h2>
+
+                  <p class="doc-p">
+                     You can easily customize the checkbox using CSS.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Change size via width / height
+                     </li>
+
+                     <li class="doc-list__item">
+                        Modify border and background colors
+                     </li>
+
+                     <li class="doc-list__item">
+                        Adjust animation timing
+                     </li>
+
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Download
+                  </h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Use this checkbox component to build clean and modern forms
+                     with consistent UI across all browsers.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/datepickerdoc.html">
+
+                     Next: Date Picker
+
+                     <span class="doc-next__arrow">
+                        →
+                     </span>
+
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc" aria-label="On this page">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">
+                     On this page
+                  </div>
+
+                  <ol class="doc-toc__list">
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#overview">
+                           Overview
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#usage">
+                           Usage
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#structure">
+                           Structure
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#states">
+                           States
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#custom">
+                           Customization
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#download">
+                           Download
+                        </a>
+                     </li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

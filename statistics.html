@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Project Statistics</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072916"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072916">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-statisticsdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Project statistics
+               <span class="doc-hero__title-sub">Tracking time and activity in Animmaster Vite Template</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               <strong>Animmaster Vite Template</strong> includes a built-in statistics system that helps you understand
+               how much time was spent on a project and how actively it was developed.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+            <p class="doc-micro">
+               <span>Dev time tracking</span>
+               <span>Sessions &amp; files count</span>
+               <span>Optional build output</span>
+            </p>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="overview" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is project statistics?</h2>
+
+                  <p class="doc-p">
+                     The statistics system automatically collects information while the development mode is
+                     running. It gives you a clear overview of how long the project was worked on and how actively
+                     files were edited.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        Statistics are collected <strong>only while the dev server is running</strong>.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Enable statistics -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="enable" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">How to enable statistics</h2>
+
+                  <p class="doc-p">
+                     To start collecting statistics, enable the feature inside
+                     <code>template.config.js</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">template.config.js</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">statistics: {
+  enable: true
+}</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     Once enabled, the system will start tracking data automatically on the next dev run.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Viewing statistics -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="view" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">How to view statistics</h2>
+
+                  <p class="doc-p">
+                     You can view collected statistics in two ways.
+                  </p>
+
+                  <h3 class="doc-h3">Manual command</h3>
+                  <p class="doc-p">
+                     Run the following command in the terminal:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm run stat</code></pre>
+                  </div>
+
+                  <h3 class="doc-h3">Automatic output on build</h3>
+                  <p class="doc-p">
+                     You can also enable automatic statistics output when running a production build:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">template.config.js</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">statistics: {
+  enable: true,
+  showonbuild: true
+}</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) What data is collected -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="data" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What data is collected</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        <strong>Project start date</strong> — the first time dev mode was launched.
+                     </li>
+                     <li class="doc-list__item">
+                        <strong>Project end date</strong> — last dev stop or last production build.
+                     </li>
+                     <li class="doc-list__item">
+                        <strong>Total work time</strong> — total time dev mode was running.
+                     </li>
+                     <li class="doc-list__item">
+                        <strong>Edited files count</strong> — number of files modified during development.
+                     </li>
+                     <li class="doc-list__item">
+                        <strong>Sessions count</strong> — how many times dev mode was started/stopped.
+                     </li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Clearing statistics -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="clear" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Clearing project statistics</h2>
+
+                  <p class="doc-p">
+                     If you need to reset all collected statistics for the project, use the command below.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm run stat-clear</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Warning</div>
+                     <div class="doc-callout__text">
+                        This action permanently deletes collected statistics for the current project.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Track your work, understand your process, and build projects more consciously.
+                     Download the Animmaster Vite Template and start working with built-in statistics today.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/workcomponent.html">
+                     Next: Work with Components
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#overview">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#enable">Enable</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#view">View</a>
+                     </li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#data">Collected data</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#clear">Clear
+                           stats</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

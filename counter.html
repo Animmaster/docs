@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Digital Counter</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072928"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072928">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-digcounterdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Digital Counter
+               <span class="doc-hero__title-sub">Animated numbers triggered on scroll</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Digital Counter component animates numeric values from zero to the target number.
+               It is commonly used for statistics, KPIs, achievements, and marketing highlights.
+               The animation starts automatically when the block enters the viewport.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+      
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is a digital counter?</h2>
+
+                  <p class="doc-p">
+                     A digital counter animates numeric values to visually represent statistics.
+                     Instead of showing static numbers, values smoothly count up when the user scrolls
+                     to the block, creating a stronger visual impact.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">How it works</div>
+                     <div class="doc-callout__text">
+                        The component relies on the <strong>Watcher</strong> (Intersection Observer).
+                        When the parent block enters the viewport, all counters inside start animating.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Files are located in <code>src/components/layout/digcounter</code>.
+                     Inside you’ll find:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS file with counter logic and animation.</li>
+                     <li class="doc-list__item">HTML example snippet.</li>
+                     <li class="doc-list__item">SCSS file for counter styling.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-digcounter</code> to each numeric element.
+                     The parent wrapper must include <code>data-anim-watcher</code> to trigger animation.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Digital counter — basic markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-watcher class="stats"&gt;
+	&lt;div data-anim-digcounter class="stats__item"&gt;1500&lt;/div&gt;
+	&lt;div data-anim-digcounter class="stats__item"&gt;500&lt;/div&gt;
+	&lt;div data-anim-digcounter class="stats__item"&gt;800&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        Without <code>data-anim-watcher</code> on the parent, the animation will not start.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Animation speed -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="speed" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Animation speed</h2>
+
+                  <p class="doc-p">
+                     You can control the animation duration for each counter individually
+                     using <code>data-anim-digcounter-speed</code>.
+                     The value is specified in milliseconds (default is <code>1000</code>).
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Digital counter — custom speed</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-watcher class="stats"&gt;
+	&lt;div data-anim-digcounter data-anim-digcounter-speed="500" class="stats__item"&gt;1500&lt;/div&gt;
+	&lt;div data-anim-digcounter data-anim-digcounter-speed="200" class="stats__item"&gt;500&lt;/div&gt;
+	&lt;div data-anim-digcounter data-anim-digcounter-speed="1700" class="stats__item"&gt;800&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Number formatting -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="format" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Number formatting</h2>
+
+                  <p class="doc-p">
+                     The component can format numbers by separating thousands.
+                     Add <code>data-anim-digcounter-format</code> to enable formatting.
+                     Optionally, specify a separator symbol (default is a space).
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Digital counter — formatting</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-watcher class="stats"&gt;
+	&lt;div data-anim-digcounter data-anim-digcounter-format="." class="stats__item"&gt;1500&lt;/div&gt;
+	&lt;div data-anim-digcounter data-anim-digcounter-format class="stats__item"&gt;500&lt;/div&gt;
+	&lt;div data-anim-digcounter data-anim-digcounter-format="," class="stats__item"&gt;800&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        The formatting affects only the visual output. Internally, the counter still
+                        operates on numeric values.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Use animated counters to highlight key numbers and metrics.
+                     Download the template and speed up your UI development.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+                
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/preloader.html">
+                     Next: Component: Preloader
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li>
+                        <Tri><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a>
+                     </Tri></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Basic
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#speed">Speed</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#format">Formatting</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

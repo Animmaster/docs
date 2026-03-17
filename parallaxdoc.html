@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Parallax</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072922"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072922">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-parallaxdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Scroll Parallax
+               <span class="doc-hero__title-sub">
+                  Smooth scroll-based parallax animation
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Scroll Parallax component moves elements relative to the scroll
+               position of the page. It creates depth and motion by translating
+               elements vertically or horizontally while the page scrolls.
+            </p>
+
+            <div class="doc-actions">
+
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+
+            </div>
+
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Layout -->
+         <!-- ========================================================= -->
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     What the Scroll Parallax module does
+                  </h2>
+
+                  <p class="doc-p">
+                     This module creates a parallax effect based on page scrolling.
+                     Elements inside a parallax container move relative to the viewport.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Smooth scroll-based movement
+                     </li>
+
+                     <li class="doc-list__item">
+                        Vertical or horizontal movement
+                     </li>
+
+                     <li class="doc-list__item">
+                        Configurable speed and direction
+                     </li>
+
+                     <li class="doc-list__item">
+                        Supports additional transform properties
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+
+                     <div class="doc-callout__title">
+                        Files location
+                     </div>
+
+                     <div class="doc-callout__text">
+                        HTML / SCSS / JS files live in:
+                        <code>src/components/effects/parallax/</code>
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Basic usage
+                  </h2>
+
+                  <p class="doc-p">
+                     Add the attribute <code>data-anim-parallax-parent</code>
+                     to a container and place parallax elements inside it.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Basic parallax markup
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div class="parent" data-anim-parallax-parent&gt;
+
+	&lt;div data-anim-parallax class="child"&gt;
+		Content
+	&lt;/div&gt;
+
+	&lt;div class="child" data-anim-parallax&gt;
+		Content
+	&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Smoothness -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="smooth" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Animation smoothness
+                  </h2>
+
+                  <p class="doc-p">
+                     Control how smoothly the element follows the scroll position.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <code>data-anim-parallax-smooth</code>
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">
+                        Tip
+                     </div>
+                     <div class="doc-callout__text">
+                        Lower values produce faster movement.
+                     </div>
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Smoothness example
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-parallax-parent data-anim-parallax-smooth="10"&gt;
+...
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Center point -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="center" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Reference center point
+                  </h2>
+
+                  <p class="doc-p">
+                     Define how the parallax offset is calculated relative to the viewport.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item"><code>top</code></li>
+                     <li class="doc-list__item"><code>center</code></li>
+                     <li class="doc-list__item"><code>bottom</code></li>
+
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Center example
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div
+	data-anim-parallax-parent
+	data-anim-parallax-center="top"&gt;
+...
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Element settings -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="elements" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Parallax element settings
+                  </h2>
+
+                  <p class="doc-p">
+                     Each parallax element can define its own movement settings.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <code>data-anim-parallax-direction="1 | -1"</code>
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-parallax-coefficient="5"</code>
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-axis="v | h"</code>
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-parallax-properties</code>
+                     </li>
+
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Element configuration
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div
+	data-anim-parallax
+	data-anim-parallax-direction="1"
+	data-anim-parallax-coefficient="10"
+	data-axis="v"&gt;
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Download
+                  </h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Add depth and motion to your layouts using smooth scroll-based
+                     parallax animations.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/rippledoc.html">
+
+                     Next: Ripple Effect
+
+                     <span class="doc-next__arrow">
+                        →
+                     </span>
+
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc" aria-label="On this page">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">
+                     On this page
+                  </div>
+
+                  <ol class="doc-toc__list">
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#intro">Overview</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#usage">Usage</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#smooth">Smoothness</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#center">Center point</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#elements">Element settings</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#download">Download</a></li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Form</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072927"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072927">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-formdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Form
+               <span class="doc-hero__title-sub">Fields, focus states, validation and submit modes</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This component provides a practical toolkit for working with forms in the template:
+               focus classes, instant validation, error messages, multiple submit modes
+               (standard / AJAX / dev simulation), scroll-to-error and popup-on-submit.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Intro -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What this component covers</h2>
+
+                  <p class="doc-p">
+                     This page describes the <strong>general form workflow</strong>:
+                     fields and placeholders, focus states, validation rules, submit modes and related helpers.
+                     Specific form elements have their own docs (Select, Checkbox/Radio, Input, Rating, Quantity, Range,
+                     etc.).
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Files are located in <code>src/components/form/form</code>.
+                     Inside you’ll find:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS files with form logic and settings.</li>
+                     <li class="doc-list__item">HTML example snippet.</li>
+                     <li class="doc-list__item">SCSS file for styling form states and errors.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-form</code> to the form element. Then use standard HTML inputs.
+                     Validation is enabled via the <code>required</code> attribute.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Form — minimal example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;form data-anim-form method="POST" action="..."&gt;
+	&lt;input
+		required
+		type="email"
+		name="form[email]"
+		data-anim-form-errtext="Error"
+		placeholder="E-mail"
+		class="input"&gt;
+	&lt;button type="submit" class="button"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Field behavior -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="fields" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Fields: focus classes and instant validation</h2>
+
+                  <p class="doc-p">
+                     The component can automatically manage focus and error states.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        <strong>Focus classes:</strong> on focus, the field and its direct parent receive
+                        <code>--form-focus</code>.
+                        To disable it for a specific field, add <code>data-anim-form-nofocus</code>.
+                     </li>
+                     <li class="doc-list__item">
+                        <strong>Validate on blur:</strong> to validate a field immediately when it loses focus,
+                        add <code>data-anim-form-validatenow</code>.
+                     </li>
+                     <li class="doc-list__item">
+                        When a field receives focus again, validation errors and error message nodes are removed
+                        automatically.
+                     </li>
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Field helpers</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;input
+	required
+	type="text"
+	name="form[name]"
+	data-anim-form-validatenow
+	placeholder="Your name"&gt;
+
+&lt;input
+	required
+	type="text"
+	name="form[no_focus]"
+	data-anim-form-nofocus
+	placeholder="No focus classes"&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Validation -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="validation" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Validation</h2>
+
+                  <p class="doc-p">
+                     To include a field into validation, add the <code>required</code> attribute.
+                     Validation runs on submit (and on blur if <code>data-anim-form-validatenow</code> is used).
+                  </p>
+
+                  <p class="doc-p">
+                     Extra validation presets can be enabled by input <code>type</code>.
+                     For example, <code>type="email"</code> validates an e-mail format.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Error state</div>
+                     <div class="doc-callout__text">
+                        If a field is invalid, the field and its parent receive <code>--form-error</code>.
+                        You can also provide a custom error text using <code>data-anim-form-errtext</code>.
+                     </div>
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Custom error text</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;input
+	required
+	type="email"
+	name="form[email]"
+	data-anim-form-errtext="E-mail error"
+	placeholder="E-mail"&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     To disable validation for a specific form, add <code>data-anim-form-novalidate</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Disable validation for a form</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;form data-anim-form data-anim-form-novalidate action="..."&gt;
+	...
+&lt;/form&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Submit modes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="submit" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Submit modes</h2>
+
+                  <p class="doc-p">
+                     The template supports several form submit workflows:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        <strong>Standard HTML submit (default):</strong> after successful validation,
+                        the browser submits the form to <code>action</code> with <code>method</code> and reloads the
+                        page.
+                     </li>
+                     <li class="doc-list__item">
+                        <strong>AJAX submit:</strong> send the form via AJAX without page reload.
+                        After success, the form resets.
+                     </li>
+                     <li class="doc-list__item">
+                        <strong>Dev simulation:</strong> no request is sent, page does not reload,
+                        and the form resets. Useful for demos and testing success behaviors.
+                     </li>
+                  </ul>
+
+                  <p class="doc-p">
+                     To enable AJAX mode, set <code>data-anim-form="ajax"</code>.
+                     For dev simulation, use <code>data-anim-form="dev"</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">AJAX / Dev modes</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;form data-anim-form="ajax" class="form" method="POST" action="..."&gt;
+	...
+&lt;/form&gt;
+
+&lt;form data-anim-form="dev" class="form" method="POST" action="..."&gt;
+	...
+&lt;/form&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 7) Helpers: scroll to error + popup -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="helpers" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Helpers</h2>
+
+                  <h3 class="doc-h3">Scroll to first error</h3>
+                  <p class="doc-p">
+                     For long forms you can auto-scroll to the first invalid field.
+                     Add <code>data-anim-form-gotoerr</code> to the form.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Scroll to error</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;form data-anim-form-gotoerr class="form" action="..."&gt;
+	...
+&lt;/form&gt;</code></pre>
+                  </div>
+
+                  <h3 class="doc-h3">Popup after submit</h3>
+                  <p class="doc-p">
+                     In <strong>ajax</strong> or <strong>dev</strong> modes you can show a popup after successful
+                     submit.
+                     Add <code>data-anim-form-popup</code> and set the popup name as the value.
+                     The Popup component must be included on the page.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Popup on success</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;form
+	data-anim-form="ajax"
+	data-anim-form-popup="form-message"
+	class="form"
+	action="..."&gt;
+	...
+&lt;/form&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 8) Events -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="events" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Events</h2>
+
+                  <p class="doc-p">
+                     After each successful submit, the component fires the <code>formSent</code> event.
+                     You can listen to it anywhere in your code:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Listen to formSent</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+document.addEventListener("formSent", function (e) {
+	// Current form element
+	const currentForm = e.detail.form
+})</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Speed up form development with built-in validation, submit modes and UX helpers.
+                     Download the template and start shipping faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+
+
+               </section>
+
+
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/mousedoc.html">
+
+                     Next: Mouse component
+
+                     <span class="doc-next__arrow">
+                        →
+                     </span>
+
+                  </a>
+
+               </nav>
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Basic
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#fields">Fields</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#validation">Validation</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#submit">Submit
+                           modes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#helpers">Helpers</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#events">Events</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

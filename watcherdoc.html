@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Component: Watcher</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072912"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072912">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-watcherdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Watcher
+               <span class="doc-hero__title-sub">IntersectionObserver helper for scroll animations and active
+                  navigation</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The <strong>Watcher</strong> component is a universal “observer” you can use for many tasks:
+               animate elements on scroll, highlight the active menu item (used by ScrollTo), trigger lazy effects,
+               and more.
+               It works by adding a helper class to elements when they enter the viewport.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+        
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="about" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">How it works</h2>
+
+                  <p class="doc-p">
+                     When an element becomes visible in the viewport (on scroll or on initial page load),
+                     the watcher adds the class <code>--watcher-view</code>.
+                     When the element leaves the viewport, the class is removed — unless “once” mode is enabled.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Typical use cases</div>
+                     <div class="doc-callout__text">
+                        Scroll-in animations • “active section” navigation highlighting • triggering effects when an
+                        element appears
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     To start observing an element, add the attribute <code>data-anim-watcher</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable watcher on an element</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-watcher class="block"&gt;...&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     Then you can target the state class in CSS/SCSS:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example: animate when visible</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+.block {
+	opacity: 0;
+	transform: translateY(16px);
+	transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.block.--watcher-view {
+	opacity: 1;
+	transform: translateY(0);
+}</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Advanced options -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="options" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Additional options</h2>
+
+                  <p class="doc-p">
+                     The watcher supports a few extra attributes that map directly to observer configuration.
+                  </p>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>data-anim-watcher-root</code></h3>
+                        <p class="doc-p">
+                           Selector of the “root” element used as viewport for the observer.
+                           Default is <code>&lt;body&gt;</code> / browser viewport.
+                        </p>
+                        <p class="doc-p">
+                           Example: <code>data-anim-watcher-root=".scroll-area"</code>
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>data-anim-watcher-margin</code></h3>
+                        <p class="doc-p">
+                           Root margin (offset) as <code>px</code> or <code>%</code>.
+                           Useful when you want to trigger earlier/later.
+                        </p>
+                        <p class="doc-p">
+                           Example: <code>data-anim-watcher-margin="100px"</code>
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>data-anim-watcher-threshold</code></h3>
+                        <p class="doc-p">
+                           How much of the element must be visible to trigger.
+                           <code>1</code> means 100% visible.
+                           Default is <code>0</code>.
+                           You can pass a comma-separated list.
+                        </p>
+                        <p class="doc-p">
+                           Example: <code>data-anim-watcher-threshold="0.25,0.5,0.75"</code>
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>data-anim-watcher-once</code></h3>
+                        <p class="doc-p">
+                           Observe only once. The class <code>--watcher-view</code> will be added one time and
+                           won’t be removed when the element leaves the viewport.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example: trigger once at 50% visibility</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div
+	data-anim-watcher
+	data-anim-watcher-threshold="0.5"
+	data-anim-watcher-once
+	class="block"
+&gt;...&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Events -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="events" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Events</h2>
+
+                  <p class="doc-p">
+                     After each watcher trigger, an event <code>watcherCallback</code> is dispatched.
+                     You can listen for it anywhere in your code.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Listen to watcher events</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+document.addEventListener("watcherCallback", function (e) {
+	// Full observer entry data:
+	const entry = e.detail.entry;
+
+	// Observed element:
+	const targetElement = entry.target;
+});</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Use the event when you need JS-only behavior (for example, initialize a chart only when it
+                        becomes visible).
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build scroll animations, active navigation, and visibility-based effects without wiring observers
+                     manually.
+                     Download the template and get the Watcher component out of the box.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/scroll.html">
+                     Next: ScrollTo component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#about">How it
+                           works</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Basic
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#options">Options</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#events">Events</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

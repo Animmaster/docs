@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Automatic upload of the build to GitHub</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072926"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072926">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-gitdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               GitHub deploy
+               <span class="doc-hero__title-sub">
+                  Automatic upload of the build to GitHub
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               In <strong>Animmaster Vite Template</strong>  you can automatically
+               build your project and upload the final <code>dist</code> folder
+               to a GitHub repository with a single command.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="about" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is GitHub deploy?</h2>
+
+                  <p class="doc-p">
+                     Animmaster Vite Template includes a built-in workflow that allows you to automatically
+                     upload the production build (<code>dist</code> folder)
+                     to a GitHub repository.
+                  </p>
+
+                  <p class="doc-p">
+                     This is especially useful for:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">publishing static websites</li>
+                     <li class="doc-list__item">GitHub Pages deployments</li>
+                     <li class="doc-list__item">quick sharing of project builds</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Configuration -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="config" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Configuration</h2>
+
+                  <p class="doc-p">
+                     To enable GitHub uploading, configure the <code>git</code> section
+                     in <code>template.config.js</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">template.config.js</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">git: {
+  repo: "https://github.com/username/repository.git",
+  branch: "main"
+}</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        The repository must already exist and you must have access rights
+                        (push permissions).
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Deploy command -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="command" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Deploy command</h2>
+
+                  <p class="doc-p">
+                     To build the project and upload it to GitHub, run:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm run git</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     This command automatically:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">runs a production build</li>
+                     <li class="doc-list__item">creates the <code>dist</code> folder</li>
+                     <li class="doc-list__item">pushes the result to the configured branch</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Workflow notes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="notes" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Notes &amp; tips</h2>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Git authentication</div>
+                     <div class="doc-callout__text">
+                        Make sure Git authentication is already configured on your machine
+                        (SSH key or credential manager).
+                     </div>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Best practice</div>
+                     <div class="doc-callout__text">
+                        Use a dedicated branch (for example <code>gh-pages</code>)
+                        if you plan to host the project via GitHub Pages.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Automated GitHub deployment is just one of many features in Animmaster Vite Template.
+                     Download the template and simplify your production workflow.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+          
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/ftp.html">
+                     Next: FTP deployment
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#about">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#config">Configuration</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#command">Deploy command</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#notes">Notes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

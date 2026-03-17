@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Fonts</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072925"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072925">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-fontsdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Working with fonts
+               <span class="doc-hero__title-sub">Local fonts, icon fonts, and Google Fonts</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This guide explains how to connect fonts in <strong>Animmaster Vite Template</strong>:
+               Google Fonts, local files, and icon fonts. The workflow is highly automated — in most cases, you only
+               need to place the files in the correct folder and run <code>npm run dev</code>
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Google Fonts -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="google-fonts" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Google Fonts connection</h2>
+
+                  <p class="doc-p">
+                     The easiest way to insert Google Fonts is using the VS Code plugin <strong>Google Fonts</strong>.
+                     It can generate either a <code>&lt;link&gt;</code> for HTML or a CSS <code>@import</code> for your
+                     styles.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Fast workflow (VS Code)</div>
+                     <div class="doc-callout__text">
+                        Press <code>F1</code> → type <strong>Google Fonts</strong> → choose the insert method → pick
+                        font → pick weights → <strong>Ok</strong>.
+                     </div>
+                  </div>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Insert as <code>&lt;link&gt;</code> in HTML</h3>
+                        <ul class="doc-list">
+                           <li class="doc-list__item">Press <code>F1</code> → search <strong>Google Fonts</strong></li>
+                           <li class="doc-list__item">Choose <strong>Google Fonts: insert &lt;link&gt;</strong></li>
+                           <li class="doc-list__item">Pick a font + variations (weights)</li>
+                           <li class="doc-list__item">Paste into your HTML page (usually inside
+                              <code>&lt;head&gt;</code>)
+                           </li>
+                        </ul>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Insert as CSS <code>@import</code></h3>
+                        <ul class="doc-list">
+                           <li class="doc-list__item">Press <code>F1</code> → search <strong>Google Fonts</strong></li>
+                           <li class="doc-list__item">Choose <strong>Google Fonts: insert CSS @import</strong></li>
+                           <li class="doc-list__item">Usually paste into <code>src/styles/style.scss</code></li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  <p class="doc-p">Example (Montserrat with variations):</p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Google Fonts — @import example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,600,700&display=swap");</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        Fonts connected from Google Fonts are loaded from Google servers and normally do not go into
+                        <code>dist/</code>.
+                        If you want remote fonts to be downloaded and connected locally, enable:
+                        <code>fonts → download: true</code>.
+                     </div>
+                  </div>
+
+                  <p class="doc-p">
+                     You can also get the import/link code directly on the Google Fonts website — plugin is just faster.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Local fonts -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="local-fonts" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Connecting local fonts</h2>
+
+                  <p class="doc-p">
+                     In Animmaster Vite Template, local fonts connection is highly automated.
+                     You drop font files into the correct folder, run dev/build, and the system:
+                     converts formats (when needed) and generates <code>@font-face</code> rules automatically.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Folder</div>
+                     <div class="doc-callout__text">
+                        Put your font files here: <code>src/assets/fonts</code>
+                     </div>
+                  </div>
+
+                  <h3 class="doc-h3">File naming rule</h3>
+                  <p class="doc-p">
+                     Because the template detects font family + weight from the filename, follow this format:
+                     <strong>Family-Variation</strong>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Naming example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">KoPubBatang-Bold.ttf
+// font-family: KoPubBatang
+// font-weight: 700</code></pre>
+                  </div>
+
+                  <h3 class="doc-h3">Step-by-step</h3>
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        Get fonts from designer/client in <code>.ttf</code>, <code>.otf</code>, or <code>.woff2</code>
+                     </li>
+                     <li class="doc-list__item">Put files into <code>src/assets/fonts</code></li>
+                     <li class="doc-list__item">Check naming (Family-Variation)</li>
+                     <li class="doc-list__item">Run dev mode: <code>npm run dev</code></li>
+                     <li class="doc-list__item">
+                        Set default font family in <code>src/styles/settings.scss</code> via <code>$fontFamily</code>
+                        (and set other families/variations in your project styles if needed)
+                     </li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) How fonts are processed -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="pipeline" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">How the template processes fonts</h2>
+
+                  <p class="doc-p">
+                     On any build/dev start, the system checks <code>src/assets/fonts</code> for <code>.otf</code>,
+                     <code>.ttf</code>, and <code>.woff2</code>.
+                     Then it runs a short pipeline:
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><strong>OTF → TTF</strong> (if <code>.otf</code> exists)</li>
+                        <li><strong>TTF → WOFF2</strong> (if <code>.ttf</code> exists)</li>
+                        <li><strong>WOFF2 scan</strong> (existing <code>.woff2</code> are used as final sources)</li>
+                        <li><strong>Cleanup</strong>: generated <code>.otf</code>/<code>.ttf</code> intermediates are
+                           removed</li>
+                        <li>
+                           Auto-generate <code>@font-face</code> rules into:
+                           <code>src/styles/fonts/fonts.css</code>
+                        </li>
+                        <li><code>fonts.css</code> is automatically connected to every HTML page</li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Heads up</div>
+                     <div class="doc-callout__text">
+                        During first conversion, you may see conversion logs in the terminal. It’s normal — just wait
+                        for the process to finish.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Icon font -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="icon-font" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Icon font from SVG</h2>
+
+                  <p class="doc-p">
+                     You can generate an icon font from SVG icons. This is useful when you want fast icons via CSS
+                     classes.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Icons folder</div>
+                     <div class="doc-callout__text">
+                        Put SVG icons here: <code>src/assets/svgicons</code>
+                     </div>
+                  </div>
+
+                  <h3 class="doc-h3">Setup</h3>
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Place SVG icons into <code>src/assets/svgicons</code></li>
+                     <li class="doc-list__item">Enable: <code>fonts → iconsfont: true</code></li>
+                     <li class="doc-list__item">Run dev mode: <code>npm run dev</code></li>
+                     <li class="doc-list__item">
+                        Use the generated classes in HTML (full list is available via developer panel link if it is
+                        enabled)
+                     </li>
+                  </ul>
+
+                  <p class="doc-p">Usage examples:</p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Icon font classes — examples</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;button class="button --icon-some"&gt;Some text&lt;/button&gt;
+
+&lt;button class="button button--icon-some"&gt;Some text&lt;/button&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">How it works</div>
+                     <div class="doc-callout__text">
+                        After adding the icon class, a <code>::before</code> pseudo-element is created and outputs the
+                        icon glyph.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Config options -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="settings" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Build settings for fonts</h2>
+
+                  <p class="doc-p">
+                     In <code>template.config.js</code> the <code>fonts</code> section contains the main toggles:
+                  </p>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>fonts → iconsfont</code></h3>
+                        <p class="doc-p">
+                           Enables generating and connecting an icon font from SVG icons.
+                           Values: <code>true/false</code>.
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>fonts → download</code></h3>
+                        <p class="doc-p">
+                           Downloads remote fonts (for example Google Fonts) and connects them locally.
+                           Values: <code>true/false</code>.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        If you build for strict offline usage or a corporate environment, enable
+                        <code>fonts → download: true</code> so everything becomes local.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                  Every project you start without a solid foundation costs you time. Download Animmaster Vite Template and start your next
+                  project with a structure that already works.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/animstyles.html">
+                     Working with styles Settings.scss and Style.scss
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#google-fonts">Google Fonts</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#local-fonts">Local fonts</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#pipeline">How
+                           it works</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#icon-font">Icon font</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#settings">Config options</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

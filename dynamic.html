@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Dynamic Adapt</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072927"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072927">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-dynamicadaptdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Dynamic Adapt
+               <span class="doc-hero__title-sub">Move elements across the DOM based on breakpoint</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               When building responsive layouts, sometimes you don’t just change styles — you need to change
+               the <strong>order</strong> or even the <strong>position</strong> of elements in the HTML structure.
+               Dynamic Adapt moves an element to another container at a specified screen width, and automatically
+               returns it back when the screen becomes wider again.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) What it does -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="what" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What Dynamic Adapt solves</h2>
+
+                  <p class="doc-p">
+                     In many cases, responsive design is not only about changing paddings or font sizes.
+                     Sometimes a block must appear in a totally different place in the markup on mobile:
+                     for example, moving a button into the header, placing a sidebar under content, or re-ordering
+                     cards for better UX.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Key behavior</div>
+                     <div class="doc-callout__text">
+                        At the given breakpoint, the element is moved to a new container (the HTML structure
+                        actually changes). When the screen grows wider again, the element is returned to its original
+                        place.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) How to use -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">How to use</h2>
+
+                  <p class="doc-p">
+                     Add the attribute <code>data-anim-dynamic</code> to the element you want to move.
+                     JS is connected automatically when the attribute is present (you can use the <code>da</code>
+                     snippet if you have it).
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Attribute format</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">data-anim-dynamic="targetSelector, breakpoint, position, parentSelector"</code></pre>
+                  </div>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item"><strong>targetSelector</strong> — (required) selector of the container
+                        to move into.</li>
+                     <li class="doc-list__item"><strong>breakpoint</strong> — (required, default <code>767.98</code>)
+                        screen width where move happens.</li>
+                     <li class="doc-list__item"><strong>position</strong> — (default <code>0</code>) index among
+                        existing children in the target container.</li>
+                     <li class="doc-list__item"><strong>parentSelector</strong> — optional “scope” selector. If
+                        provided, the system searches for the target inside this parent.</li>
+                  </ul>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Defaults</div>
+                     <div class="doc-callout__text">
+                        If you omit optional values, the system uses <code>767.98</code> as the breakpoint and
+                        <code>0</code> as the position.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Examples -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="examples" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Examples</h2>
+
+                  <p class="doc-p">Move a button into <code>.header__actions</code> on mobile:</p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">HTML</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;button
+	class="hero__cta"
+	data-anim-dynamic=".header__actions, 767.98, 0"
+&gt;
+	Get started
+&lt;/button&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">Move a sidebar under content at <code>991.98</code> and place it after the first
+                     child:</p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">HTML</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;aside
+	class="layout__sidebar"
+	data-anim-dynamic=".layout__content, 991.98, 1"
+&gt;
+	...
+&lt;/aside&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     Use a parent selector to disambiguate the target (useful if the same selector appears multiple
+                     times on the page):
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">HTML</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div
+	class="card__meta"
+	data-anim-dynamic=".card__footer, 767.98, 0, .card"
+&gt;
+	...
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Tips -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="tips" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Practical tips</h2>
+
+                  <div class="doc-grid doc-grid--no-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Prefer stable selectors</h3>
+                        <p class="doc-p">
+                           Use unique, predictable selectors for targets (BEM-style containers are perfect).
+                           Avoid selectors that might change (like <code>:nth-child</code> or deeply nested chains).
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Think about accessibility</h3>
+                        <p class="doc-p">
+                           Moving elements changes DOM order, which affects keyboard navigation and screen readers.
+                           Make sure the new order still makes sense.
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Use “position” intentionally</h3>
+                        <p class="doc-p">
+                           Position <code>0</code> means “first in target”.
+                           If you need it after an existing block, use <code>1</code>, <code>2</code>, etc.
+                        </p>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build responsive layouts faster: move blocks where they belong without rewriting markup for each
+                     breakpoint.
+                     Download the template and use Dynamic Adapt out of the box.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/menuburger.html">
+                     Next: Component: Adaptive Menu (Burger)
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#what">What it
+                           does</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">How to
+                           use</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#examples">Examples</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#tips">Tips</a>
+                     </li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

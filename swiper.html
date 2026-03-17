@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Slider (Swiper)</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072916"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072916">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-sliderdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Slider (Swiper)
+               <span class="doc-hero__title-sub">Swiper init file + snippet markup for fast setup</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               In this template, the slider component is prepared for <strong>Swiper</strong>.
+               The JS file includes a ready init function with modules, optional blocks (pagination, scrollbar,
+               breakpoints), and a safety check that runs only when <code>[data-anim-slider]</code> exists.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Overview</h2>
+
+                  <p class="doc-p">
+                     The Slider component is based on Swiper. You configure everything in the component JS file:
+                     import needed modules, create slider instances, and enable/disable optional parts like
+                     pagination, scrollbar, breakpoints, autoplay, and effects.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Swiper documentation</div>
+                     <div class="doc-callout__text">
+                        Use official Swiper docs for all settings and modules:
+                        <code>https://swiperjs.com/</code>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Files are located in <code>src/components/layout/slider</code>.
+                     Main entry file: <code>src/components/layout/slider/slider.js</code>.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item"><code>slider.js</code> — Swiper import + init logic.</li>
+                     <li class="doc-list__item"><code>slider.scss</code> — base Swiper styles (or optional bundle
+                        styles).</li>
+                     <li class="doc-list__item">HTML snippet: <code>swiper</code> / <code>swiperfull</code>.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) JS setup -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="js" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">JavaScript setup</h2>
+
+                  <p class="doc-p">
+                     Below is the prepared file structure for Swiper initialization.
+                     Modules are imported from <code>swiper/modules</code>.
+                     Init runs only if <code>[data-anim-slider]</code> exists.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">src/components/layout/slider/slider.js</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+/*
+Documentation for working in the template:
+Slider documentation: https://swiperjs.com/
+Snippet (HTML): swiper
+*/
+
+// Import the Swiper slider from node_modules
+// If needed, import additional slider modules by listing them in {} separated by commas
+// Example: { Navigation, Autoplay }
+import Swiper from 'swiper'
+import { Navigation } from 'swiper/modules'
+/*
+Main slider modules:
+Navigation, Pagination, Autoplay,
+EffectFade, Lazy, Manipulation
+See https://swiperjs.com/ for details
+*/
+
+// Swiper styles
+// Import base styles
+import './slider.scss'
+// Full bundle of styles from node_modules
+// import 'swiper/css/bundle';
+
+// Initialize sliders
+function initSliders() {
+	// List of sliders
+	// Check if there is a slider on the page
+	if (document.querySelector('.swiper')) {
+		// &lt;- Specify the class of the needed slider
+		// Create slider
+		new Swiper('.swiper', {
+			// &lt;- Specify the class of the needed slider
+			// Connect slider modules
+			// for this specific case
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			// autoHeight: true,
+			speed: 800,
+
+			// touchRatio: 0,
+			// simulateTouch: false,
+			// loop: true,
+			// preloadImages: false,
+			// lazy: true,
+
+			/*
+			// Effects
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+			// Pagination
+			/*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+			// Scrollbar
+			/*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+			// Prev/Next buttons
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+
+			/*
+			// Breakpoints
+			breakpoints: {
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 0,
+					autoHeight: true,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				1268: {
+					slidesPerView: 4,
+					spaceBetween: 30,
+				},
+			},
+			*/
+
+			// Events
+			on: {},
+		})
+	}
+}
+
+document.querySelector('[data-anim-slider]')
+	? window.addEventListener('load', initSliders)
+	: null</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        If you use multiple sliders on the same page, use unique selectors instead of
+                        <code>.swiper</code>
+                        (for example: <code>.hero-slider</code>, <code>.reviews-slider</code>) and separate controls
+                        inside each block.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) HTML snippet -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="html" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">HTML snippet (swiper)</h2>
+
+                  <p class="doc-p">
+                     Use the snippet <code>swiper</code> to generate the markup.
+                     The main wrapper has <code>data-anim-slider</code> and the Swiper root class <code>swiper</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Slider — base markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;!-- Slider wrapper --&gt;
+&lt;div data-anim-slider class="block-name__slider swiper"&gt;
+	&lt;!-- Moving part of the slider --&gt;
+	&lt;div class="block-name__wrapper swiper-wrapper"&gt;
+		&lt;!-- Slide --&gt;
+		&lt;div class="block-name__slide swiper-slide"&gt;&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- If pagination is needed --&gt;
+	&lt;div class="swiper-pagination"&gt;&lt;/div&gt;
+	&lt;!-- If navigation is needed (left/right) --&gt;
+	&lt;button type="button" class="swiper-button-prev"&gt;&lt;/button&gt;
+	&lt;button type="button" class="swiper-button-next"&gt;&lt;/button&gt;
+	&lt;!-- If a scrollbar is needed --&gt;
+	&lt;div class="swiper-scrollbar"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        If you enable navigation in JS, make sure the buttons exist in HTML.
+                        Same for pagination and scrollbar — add the element and enable the config block in JS.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Notes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="notes" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Notes &amp; workflow</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        To enable more features (pagination/autoplay/lazy/effects), import modules from
+                        <code>swiper/modules</code>
+                        and add them to <code>modules: []</code>.
+                     </li>
+                     <li class="doc-list__item">
+                        If you want “all-in-one” Swiper styles, uncomment <code>import 'swiper/css/bundle'</code>.
+                     </li>
+                     <li class="doc-list__item">
+                        Init is attached on <code>window.load</code> only if <code>[data-anim-slider]</code> exists.
+                     </li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Start using Swiper instantly with a ready component structure, modules setup,
+                     and markup snippets inside the template.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+             
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/fullpage.html">
+                     Next: Full page component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#js">JavaScript</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#html">HTML
+                           snippet</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#notes">Notes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

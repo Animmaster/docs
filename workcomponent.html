@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Work with Components</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072917"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072917">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-componentsdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Components
+               <span class="doc-hero__title-sub">Creating your own components (and plugins)</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               In <strong>Animmaster Vite Template</strong> the project is built around a component-first workflow:
+               each UI block can have its own <code>HTML</code>, <code>SCSS</code>, and <code>JS</code>.
+               The build system can also “hot connect” components automatically when it detects the required markup.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) What is a component -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="what" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is a component?</h2>
+
+                  <p class="doc-p">
+                     A <strong>component</strong> is a self-contained object that has its own code:
+                     <code>HTML</code> for structure, <code>SCSS</code> for styles, and <code>JS</code> for logic.
+                     A component can be very small (for example a single button) or quite large (tabs, spollers,
+                     modals, forms, etc.).
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Core idea</div>
+                     <div class="doc-callout__text">
+                        One component = one folder = predictable structure and easy reuse.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Where components live -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="where" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Where components live</h2>
+
+                  <p class="doc-p">
+                     All components are located in <code>src/components</code> and are grouped by purpose:
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><code>custom/</code> — your own components (recommended place for custom work).</li>
+                        <li><code>effects/</code> — components for effects and animations.</li>
+                        <li><code>forms/</code> — components for forms and form elements.</li>
+                        <li><code>layout/</code> — layout parts of the site (header, footer, navigation, templates).
+                        </li>
+                        <li><code>wordpress/</code> — files for WordPress workflows (if you use fullstack mode).</li>
+                     </ul>
+                  </div>
+
+                  <p class="doc-p">
+                     Some components can also have a <strong>plugins</strong> subfolder for optional features:
+                     <code>src/components/layout/header/plugins/...</code>
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Using components (hot connection) -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="use" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Using components</h2>
+
+                  <p class="doc-p">
+                     Animmaster Vite Template tries to minimize manual JavaScript work. In most cases, to connect a component you only
+                     need to add a specific piece of markup — usually a <strong>data attribute</strong>:
+                     <code>data-anim-(folder name)</code>.
+                  </p>
+
+                  <p class="doc-p">
+                     The build system detects this and automatically connects the component’s JS (and styles,
+                     if you import them).
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example: tabs component</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-tabs class="tabs"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        If a feature requires additional modules (like dynamic adaptive), you’ll usually enable it
+                        via its own data attribute as well (example: <code>data-anim-dynamic="..."</code>).
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Plugins -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="plugins" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Using plugins</h2>
+
+                  <p class="doc-p">
+                     Sometimes a component needs small optional features: extra behavior, a tiny script, or a
+                     specific effect. For that, Animmaster Vite Template supports a <strong>plugins system</strong>.
+                  </p>
+
+                  <p class="doc-p">
+                     A plugin is considered an addition to a component — it’s not meant to be used alone.
+                     A common example is a header scroll effect plugin.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example: header + scroll plugin</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;header data-anim-header data-anim-header-scroll class="header"&gt;
+  ...
+&lt;/header&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">How it works</div>
+                     <div class="doc-callout__text">
+                        When a plugin attribute is detected, the build connects that plugin’s JS/SCSS on top of the
+                        base component.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Creating a custom component -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="create-component" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Creating your own component</h2>
+
+                  <p class="doc-p">
+                     Custom components should be created inside <code>src/components/custom/</code>.
+                     The folder name becomes the component key for “hot connection”.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        Create a folder:
+                        <code>src/components/custom/&lt;component-name&gt;/</code>
+                     </li>
+                     <li class="doc-list__item">
+                        Create files with the same name (only what you need):
+                        <code>&lt;component-name&gt;.html</code>, <code>&lt;component-name&gt;.scss</code>,
+                        <code>&lt;component-name&gt;.js</code>
+                     </li>
+                     <li class="doc-list__item">
+                        If you use SCSS and you have a JS file — import styles in JS:
+                        <code>import './&lt;component-name&gt;.scss'</code>
+                        (or connect SCSS via HTML <code>&lt;link&gt;</code> if your component doesn’t use JS).
+                     </li>
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">SCSS import inside component JS</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+import './aside.scss'
+
+export function asideInit() {
+  // component logic
+}</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Naming rules</div>
+                     <div class="doc-callout__text">
+                        Use Latin letters, no spaces, no numbers, and no special characters.
+                     </div>
+                  </div>
+
+                  <p class="doc-p">
+                     For fast scaffolding you can use a helper command:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm run add componentName</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     This will create the folder and base <code>HTML</code>/<code>SCSS</code>/<code>JS</code> files.
+                     The SCSS import is usually already included in the generated JS.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Creating a plugin for your component -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="create-plugin" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Creating your own plugin</h2>
+
+                  <p class="doc-p">
+                     Plugins live inside the component folder:
+                     <code>src/components/custom/&lt;component-name&gt;/plugins/&lt;plugin-name&gt;/</code>
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        Create a plugin folder:
+                        <code>.../plugins/&lt;plugin-name&gt;/</code>
+                     </li>
+                     <li class="doc-list__item">
+                        Create plugin files (only what you need):
+                        <code>&lt;plugin-name&gt;.html</code>, <code>&lt;plugin-name&gt;.scss</code>,
+                        <code>&lt;plugin-name&gt;.js</code>
+                     </li>
+                     <li class="doc-list__item">
+                        If you use SCSS and you have a JS file — import styles in plugin JS:
+                        <code>import './&lt;plugin-name&gt;.scss'</code>
+                        (or connect SCSS via HTML <code>&lt;link&gt;</code>).
+                     </li>
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Plugin connection attribute</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-aside data-anim-aside-move class="aside"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Rule</div>
+                     <div class="doc-callout__text">
+                        Plugin attribute format:
+                        <code>data-anim-&lt;component&gt;-&lt;plugin&gt;</code>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 7) How to include HTML + how styles load -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="include" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Connecting component HTML</h2>
+
+                  <p class="doc-p">
+                     If your component has an HTML file that should be inserted into a page, connect it via
+                     <code>&lt;include&gt;</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Include component HTML</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;include src="@components/custom/aside/aside.html"&gt;&lt;/include&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Best practice</div>
+                     <div class="doc-callout__text">
+                        Keep reusable markup inside the component and connect it via <code>&lt;include&gt;</code>.
+                        This way a single edit updates all pages that use it.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 8) Components dev page -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="devpage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Components dev page (playground)</h2>
+
+                  <p class="doc-p">
+                     If you develop components before integrating them into real pages, Animmaster Vite Template includes a separate
+                     page for comfortable component development and preview.
+                  </p>
+
+                  <p class="doc-p">
+                     This page does <strong>not</strong> go into production build — it exists only for development.
+                  </p>
+
+                  <p class="doc-p">
+                     To show it in the developer navigation panel, enable:
+                     <code>devcomponents -&gt; enable: true</code> in <code>template.config.js</code>.
+                  </p>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Use the playground to test markup + JS behavior in isolation before placing a component into
+                        real pages.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build faster with a component-first workflow and automatic connection.
+                     Download Animmaster Vite Template and start your next project with a clean structure.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/wp.html">
+                     Next: WordPress workflow
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#what">What is
+                           a component</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#where">Where
+                           components live</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#use">Using
+                           components</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#plugins">Plugins</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#create-component">Create component</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#create-plugin">Create plugin</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#include">Include HTML</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#devpage">Dev
+                           page</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Work with html</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072912"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072912">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-workhtmldoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Working with HTML
+               <span class="doc-hero__title-sub">Includes, templates, locals, conditions &amp; loops</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               Animmaster Vite Template includes a powerful HTML workflow: reuse blocks with
+               <code>&lt;include&gt;</code>,
+               build pages on top of templates with <code>&lt;template&gt;</code> + <code>&lt;block&gt;</code>,
+               and add “programming” features like variables, conditions and loops.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+               <!-- ========================================================= -->
+               <!-- 1) Intro -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Overview</h2>
+                  <p class="doc-p">
+                     The template provides advanced HTML tooling that you can use (or ignore) depending on the project.
+                     The main goal is to reduce duplication and keep your layout consistent across pages.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Best use case</div>
+                     <div class="doc-callout__text">
+                        If you repeat the same code in multiple pages (like <code>head</code>, <code>header</code>,
+                        <code>footer</code>),
+                        use <code>&lt;include&gt;</code> or <code>&lt;template&gt;</code> so you edit it once and update
+                        everywhere.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Includes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="includes" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Include HTML files</h2>
+
+                  <p class="doc-p">
+                     When you need to reuse a chunk of HTML across many pages, use the built-in include syntax:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Include syntax</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;include src="path/to/file.html"&gt;&lt;/include&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     Example: connect <code>head</code>, <code>header</code> and <code>footer</code> on every page.
+                     Edit <code>header.html</code> once — and it updates everywhere it’s included.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example page with includes</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+
+&lt;!-- connect head --&gt;
+&lt;include src="@components/layout/head/head.html"&gt;&lt;/include&gt;
+
+&lt;body&gt;
+  &lt;div class="wrapper"&gt;
+
+    &lt;!-- connect header --&gt;
+    &lt;include src="@components/layout/header/header.html"&gt;&lt;/include&gt;
+
+    &lt;main class="page"&gt;
+      &lt;!-- page content --&gt;
+    &lt;/main&gt;
+
+    &lt;!-- connect footer --&gt;
+    &lt;include src="@components/layout/footer/footer.html"&gt;&lt;/include&gt;
+
+  &lt;/div&gt;
+
+  &lt;script type="module" src="@js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Templates -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="templates" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Use HTML templates</h2>
+
+                  <p class="doc-p">
+                     For larger projects it’s convenient to use templates (layouts). Templates are stored in
+                     <code>src/components/templates</code> — you can add your own.
+                  </p>
+
+                  <p class="doc-p">
+                     The key idea is simple:
+                     <code>&lt;block name="..."&gt;</code> defines slots, and pages “fill” those slots using
+                     <code>&lt;template src="..."&gt;</code>.
+                  </p>
+
+                  <div class="doc-grid doc-grid--mob-adap">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Template example: <code>main.html</code></h3>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">src/components/templates/main/main.html</div>
+            
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;include src="@components/layout/head/head.html"&gt;&lt;/include&gt;
+
+&lt;link rel="stylesheet" href="@components/templates/main/main.scss"&gt;
+
+&lt;body&gt;
+  &lt;div class="wrapper"&gt;
+    &lt;block name="header"&gt;&lt;/block&gt;
+    &lt;block name="main"&gt;&lt;/block&gt;
+    &lt;block name="footer"&gt;&lt;/block&gt;
+  &lt;/div&gt;
+
+  &lt;block name="popup"&gt;&lt;/block&gt;
+
+  &lt;script type="module" src="@js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Template example: <code>inner.html</code></h3>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">src/components/templates/inner/inner.html</div>
+                       
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;include src="@components/layout/head/head.html"&gt;&lt;/include&gt;
+
+&lt;link rel="stylesheet" href="@components/templates/inner/inner.scss"&gt;
+
+&lt;body&gt;
+  &lt;div class="wrapper"&gt;
+    &lt;block name="header"&gt;&lt;/block&gt;
+
+    &lt;div class="inner"&gt;
+      &lt;block name="main"&gt;&lt;/block&gt;
+      &lt;block name="aside"&gt;&lt;/block&gt;
+    &lt;/div&gt;
+
+    &lt;block name="footer"&gt;&lt;/block&gt;
+  &lt;/div&gt;
+
+  &lt;block name="popup"&gt;&lt;/block&gt;
+
+  &lt;script type="module" src="@js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                     </div>
+                  </div>
+
+                  <p class="doc-p">
+                     Notice how each template can connect its own SCSS file — that’s useful when layouts are different.
+                  </p>
+
+                  <h3 class="doc-h3">Page example: <code>index.html</code> uses <code>main.html</code></h3>
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">src/index.html</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;template src="@components/templates/main/main.html"&gt;
+
+  &lt;block name="header"&gt;
+    &lt;include src="@components/layout/header/header.html"&gt;&lt;/include&gt;
+  &lt;/block&gt;
+
+  &lt;block name="main"&gt;
+    &lt;include src="@components/pages/home/home.html"&gt;&lt;/include&gt;
+  &lt;/block&gt;
+
+  &lt;block name="footer"&gt;
+    &lt;include src="@components/layout/footer/footer.html"&gt;&lt;/include&gt;
+  &lt;/block&gt;
+
+  &lt;block name="popup"&gt;&lt;/block&gt;
+
+&lt;/template&gt;</code></pre>
+                  </div>
+
+                  <h3 class="doc-h3">Page example: <code>contacts.html</code> uses <code>inner.html</code></h3>
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">contacts.html</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;template src="@components/templates/inner/inner.html"&gt;
+
+  &lt;block name="header"&gt;
+    &lt;include src="@components/layout/header/header.html"&gt;&lt;/include&gt;
+  &lt;/block&gt;
+
+  &lt;block name="main"&gt;
+    &lt;include src="@components/pages/contacts/contacts.html"&gt;&lt;/include&gt;
+  &lt;/block&gt;
+
+  &lt;block name="aside"&gt;
+    &lt;include src="@components/layout/aside/aside.html"&gt;&lt;/include&gt;
+  &lt;/block&gt;
+
+  &lt;block name="footer"&gt;
+    &lt;include src="@components/layout/footer/footer.html"&gt;&lt;/include&gt;
+  &lt;/block&gt;
+
+  &lt;block name="popup"&gt;&lt;/block&gt;
+
+&lt;/template&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Locals (variables) -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="locals" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Variables (locals)</h2>
+
+                  <p class="doc-p">
+                     You can pass data to included/template files using <code>locals</code> (JSON). Inside included
+                     HTML, print variables using double square brackets:
+                     <code>&#91;&#91;title&#93;&#93;</code>.
+                  </p>
+
+                  <div class="doc-grid doc-grid--mob-adap">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Pass <code>locals</code> into <code>head.html</code></h3>
+                        <div class="codeblock" data-codeblock="">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">contacts.html</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">
+      &lt;!DOCTYPE html&gt;
+      &lt;html lang="en"&gt;
+      
+      &lt;include
+        src="@components/layout/head/head.html"
+        locals='{"title":"TEXT"}'&gt;
+      &lt;/include&gt;
+      
+      &lt;body&gt;
+        &lt;div class="wrapper"&gt;
+          &lt;include src="@components/layout/header/header.html"&gt;&lt;/include&gt;
+          &lt;include src="@components/pages/home/home.html"&gt;&lt;/include&gt;
+          &lt;include src="@components/layout/footer/footer.html"&gt;&lt;/include&gt;
+        &lt;/div&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Render the variable inside <code>head.html</code></h3>
+                        <div class="codeblock" data-codeblock="">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">@components/layout/head/head.html</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">
+      &lt;head&gt;
+        &lt;meta charset="UTF-8" /&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;link rel="stylesheet" href="@styles/style.scss"&gt;
+        &lt;title&gt;&#91;&#91;title&#93;&#93;&lt;/title&gt;
+      &lt;/head&gt;</code></pre>
+                        </div>
+                     </div>
+                  </div>
+
+                  <p class="doc-p">You can pass multiple values the same way:</p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Multiple locals example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+      &lt;include
+        src="@components/layout/head/head.html"
+        locals='{
+          "title":"Page name",
+          "keywords":"...",
+          "description":"..."
+        }'&gt;
+      &lt;/include&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Conditions -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="conditions" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">
+                     Conditions: <code>&lt;if&gt;</code>, <code>&lt;elseif&gt;</code>, <code>&lt;else&gt;</code>
+                  </h2>
+
+                  <p class="doc-p">
+                     When locals are available, you can add conditional logic. Example: highlight the active menu item.
+                     Pass an <code>active</code> value into <code>header.html</code>.
+                  </p>
+
+                  <div class="codeblock">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Pass active page name</div>
+  
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+      &lt;include
+        src="@components/layout/header/header.html"
+        locals='{"active":"Home"}'&gt;
+      &lt;/include&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">Then, inside <code>header.html</code>:</p>
+
+                  <div class="codeblock">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Condition example inside header</div>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+      &lt;ul class="menu__list"&gt;
+      
+        &lt;if condition="'&#91;&#91;active&#93;&#93;' === 'Home'"&gt;
+          &lt;li class="menu__item"&gt;
+            &lt;a href="#" class="menu__link menu__link--active"&gt;Home&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/if&gt;
+      
+        &lt;else&gt;
+          &lt;li class="menu__item"&gt;
+            &lt;a href="&#91;&#91;item.href&#93;&#93;" class="menu__link"&gt;Home&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/else&gt;
+      
+      &lt;/ul&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Instead of duplicating huge menu markup, combine conditions with loops (next section).
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Loops -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="loops" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Loops: <code>&lt;each&gt;</code></h2>
+
+                  <p class="doc-p">
+                     To optimize repetitive markup, you can generate items from data using <code>&lt;each&gt;</code>.
+                     Example: build a menu from an array, and still keep the active item highlight.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Loop + condition example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+         &lt;ul class="menu__list"&gt;
+      
+        &lt;each loop='item in [
+          {"href": "#","ancor": "Home"},
+          {"href": "#","ancor": "About"},
+          {"href": "#","ancor": "Blog"},
+          {"href": "#","ancor": "Contacts"}
+        ]'&gt;
+      
+          &lt;if condition="'&#91;&#91;active&#93;&#93;' === '&#91;&#91;item.ancor&#93;&#93;'"&gt;
+            &lt;li class="menu__item"&gt;
+              &lt;a href="&#91;&#91;item.href&#93;&#93;" class="menu__link menu__link--active"&gt;&#91;&#91;item.ancor&#93;&#93;&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/if&gt;
+      
+          &lt;else&gt;
+            &lt;li class="menu__item"&gt;
+              &lt;a href="&#91;&#91;item.href&#93;&#93;" class="menu__link"&gt;&#91;&#91;item.ancor&#93;&#93;&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/else&gt;
+      
+        &lt;/each&gt;
+      
+      &lt;/ul&gt;</code></pre>
+                  </div>
+               </section>
+
+
+               <!-- ========================================================= -->
+               <!-- 7) Build settings -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="settings" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Build settings for HTML</h2>
+
+                  <p class="doc-p">
+                     In <code>template.config.js</code>, check the <code>html</code> section:
+                  </p>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>html → beautify</code></h3>
+                     <p class="doc-p">Controls HTML formatting in production builds.</p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>enable</code> — enable/disable formatting
+                           (<code>true/false</code>)</li>
+                        <li class="doc-list__item"><code>indent</code> — indentation style</li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Recommendation</div>
+                     <div class="doc-callout__text">
+                        Enable beautify for production builds so the final HTML is clean and readable (helpful for demos
+                        and handoff).
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Stop copy-pasting the same header/footer into every page.
+                     Use includes and templates to build faster — and keep everything consistent.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/workimg.html">
+                     Next: Working with images, functionality
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#includes">Includes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#templates">Templates</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#locals">Locals
+                           (variables)</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#conditions">Conditions</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#loops">Loops</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#settings">Build settings</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

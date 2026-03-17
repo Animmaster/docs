@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Chart</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072930"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072930">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-chartdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Chart
+               <span class="doc-hero__title-sub">
+                  Data visualization powered by Chart.js
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Chart component allows you to easily create charts using HTML attributes.
+               It supports multiple chart types and is powered by Chart.js.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="overview" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Overview</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Multiple chart types</li>
+                     <li class="doc-list__item">HTML-based configuration</li>
+                     <li class="doc-list__item">Responsive</li>
+                     <li class="doc-list__item">Powered by Chart.js</li>
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-chart</code> to a canvas element.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Line chart</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;canvas
+data-anim-chart
+data-anim-chart-type="line"
+data-anim-chart-labels='["Jan","Feb","Mar","Apr"]'
+data-anim-chart-datasets='[
+{
+"label":"Visitors",
+"data":[120,200,150,300],
+"borderColor":"#6366f1",
+"backgroundColor":"#6366f1"
+}
+]'
+&gt;&lt;/canvas&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Types -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="types" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Chart types</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">line</li>
+                     <li class="doc-list__item">bar</li>
+                     <li class="doc-list__item">pie</li>
+                     <li class="doc-list__item">doughnut</li>
+                     <li class="doc-list__item">radar</li>
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Bar example -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="bar" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Bar chart</h2>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;canvas
+data-anim-chart
+data-anim-chart-type="bar"
+data-anim-chart-labels='["Mon","Tue","Wed"]'
+data-anim-chart-datasets='[
+{
+"label":"Orders",
+"data":[5,10,8],
+"backgroundColor":"#22c55e"
+}
+]'
+&gt;&lt;/canvas&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Pie example -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="pie" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Pie chart</h2>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;canvas
+data-anim-chart
+data-anim-chart-type="pie"
+data-anim-chart-labels='["Red","Blue","Green"]'
+data-anim-chart-datasets='[
+{
+"data":[10,20,30],
+"backgroundColor":["red","blue","green"]
+}
+]'
+&gt;&lt;/canvas&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Attributes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="attributes" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Attributes</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item"><code>data-anim-chart</code> — init chart</li>
+                     <li class="doc-list__item"><code>data-anim-chart-type</code> — chart type</li>
+                     <li class="doc-list__item"><code>data-anim-chart-labels</code> — labels array</li>
+                     <li class="doc-list__item"><code>data-anim-chart-datasets</code> — datasets config</li>
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Behavior -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="behavior" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Behavior</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Parses data from HTML attributes</li>
+                     <li class="doc-list__item">Initializes Chart.js instance</li>
+                     <li class="doc-list__item">Automatically responsive</li>
+                     <li class="doc-list__item">Supports multiple charts</li>
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Use Chart component for dashboards, analytics,
+                     reports, and data visualization interfaces.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+       
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc">
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">On this page</div>
+
+                  <ol class="doc-toc__list">
+                     <li><a data-anim-scrollto="#overview">Overview</a></li>
+                     <li><a data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a data-anim-scrollto="#types">Types</a></li>
+                     <li><a data-anim-scrollto="#bar">Bar</a></li>
+                     <li><a data-anim-scrollto="#pie">Pie</a></li>
+                     <li><a data-anim-scrollto="#attributes">Attributes</a></li>
+                     <li><a data-anim-scrollto="#behavior">Behavior</a></li>
+                     <li><a data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+
+               </div>
+            </aside>
+
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

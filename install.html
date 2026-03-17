@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Install and Run</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072925"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072925">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-installdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- Top -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- Hero -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Install & Run
+               <span class="doc-hero__title-sub">Animmaster Vite Template — getting started</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               Follow these steps once — and your next projects start instantly.
+               Install dependencies, choose a run mode, and ship when you’re ready.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">Download <span>Animmaster</span> Vite
+                     Template</span>
+                  <span class="doc-btn__text doc-btn__text--hover">Save your time — start now</span>
+               </a>
+            </div>
+         </div>
+
+         <!-- Layout -->
+         <div class="doc-layout">
+            <article class="doc-content">
+               <section class="doc-section " id="requirements" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Requirements before installation!</h2>
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Node.js</div>
+                     <div class="doc-callout__text">
+                        Install <strong>Node.js</strong> first. Get the <strong>Windows</strong> or
+                        <strong>macOS</strong> version from
+                        <a class="doc-link" href="https://nodejs.org/en" target="_blank" rel="noreferrer">nodejs.org</a>.
+                        Node comes with <strong>npm</strong>, so you’ll be able to run <code>npm i</code> and all
+                        template scripts.
+                     </div>
+                  </div>
+
+               </section>
+
+               <!-- =========================
+					1) Install
+					========================== -->
+               <section class="doc-section" id="install" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Installation</h2>
+
+                  <p class="doc-p">
+                     After downloading the template, unzip the archive into your project folder.
+                     Make sure the folder path uses <strong>Latin characters</strong> and does not contain spaces or
+                     symbols like
+                     <strong>#</strong> or <strong>!</strong>.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Project folder rules</div>
+                     <div class="doc-callout__text">
+                        Use Latin names, no spaces, no <strong>#</strong> or <strong>!</strong> anywhere in the path.
+                     </div>
+                  </div>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Open the project folder in your editor, then open a terminal in that folder and install
+                     dependencies:
+                  </p>
+
+                  <div class="codeblock">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm i</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     You may see yellow <strong>WARN</strong> messages during installation — they are usually safe to
+                     ignore.
+                     Red <strong>ERR!</strong> messages mean something failed and should be fixed.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">After install</div>
+                     <div class="doc-callout__text">
+                        You should see <code>node_modules</code> and <code>package-lock.json</code> created in your
+                        project.
+                     </div>
+                  </div>
+               </section>
+
+
+               <section class="doc-section doc-video" id="video-guide" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Video guide</h2>
+
+                  <p class="doc-p">
+                     Prefer watching instead of reading?
+                     This short video walkthrough shows how to install, run, and start working with
+                     <strong>Animmaster Vite Template</strong> step by step.
+                  </p>
+
+                  <div class="doc-video__box">
+                     <div class="doc-video__ratio">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/ggCq0EqTdmc?si=0iH5FCfi-EhCrIuG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                     </div>
+                  </div>
+
+               </section>
+
+
+               <!-- =========================
+					2) Run modes (full)
+					========================== -->
+               <section class="doc-section" id="modes" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Run modes</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Animmaster Vite Template supports different scripts for daily development, production builds,
+                     deployments, and packaging.
+                  </p>
+
+                  <div class="doc-grid">
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Development</h3>
+                        <p class="doc-p">Use this command to start Vite template</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run dev</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Development (online)</h3>
+                        <p class="doc-p">Access dev server from other devices on your network.</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run online</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Production build</h3>
+                        <p class="doc-p">Build optimized output into <code>dist</code>. No server is started.</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run build</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Preview build</h3>
+                        <p class="doc-p">Serve the production build locally to test before deploy.</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run preview</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Deploy via FTP</h3>
+                        <p class="doc-p">Build + upload <code>dist</code> to your FTP server (optional).</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run deploy</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Publish to GitHub</h3>
+                        <p class="doc-p">Build + publish to GitHub Pages (optional).</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run git</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Build ZIP archive</h3>
+                        <p class="doc-p">Create a ZIP package of the final build (optional).</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run zip</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">WordPress (dev)</h3>
+                        <p class="doc-p">Run WordPress dev workflow (optional, WP mode only).</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run wp</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">WordPress (build)</h3>
+                        <p class="doc-p">Build production output for WP workflow (optional).</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run wpbuild</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Stop WP server</h3>
+                        <p class="doc-p">Stop WordPress Docker server (optional, WP mode only).</p>
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Terminal</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">npm run wpstop</code></pre>
+                        </div>
+                     </div>
+
+                  </div>
+               </section>
+
+               <!-- =========================
+					3) Dev mode details
+					========================== -->
+               <section class="doc-section" id="dev" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What happens in Development mode</h2>
+
+                  <p class="doc-p">
+                     In development mode, the template runs only what you need while coding: fast rebuilds, live reload,
+                     and automatic processing of your source files.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        In Development mode, final files are not written to disk — no <code>dist</code> folder is
+                        created.
+                     </div>
+                  </div>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Convert OTF/TTF fonts to WOFF2 and connect them (when needed)</li>
+                     <li class="doc-list__item">Generate icon font and connect it (optional)</li>
+                     <li class="doc-list__item">Process HTML files and resolve aliases</li>
+                     <li class="doc-list__item">Process PUG (if enabled) and resolve aliases</li>
+                     <li class="doc-list__item">Process JavaScript modules</li>
+                     <li class="doc-list__item">Process SCSS/CSS</li>
+                     <li class="doc-list__item">Start local server and open the browser</li>
+                     <li class="doc-list__item">Watch changes and auto-reload the page</li>
+                  </ul>
+               </section>
+
+               <!-- =========================
+					4) Production details
+					========================== -->
+               <section class="doc-section" id="build" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What happens in Production build</h2>
+
+                  <p class="doc-p">
+                     Production mode creates the final optimized project output and saves it into the <code>dist</code>
+                     folder.
+                     The server does not start automatically.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        All output files are written into <code>dist</code>. No local server is started in this mode.
+                     </div>
+                  </div>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Convert fonts to WOFF2 and connect them (if needed)</li>
+                     <li class="doc-list__item">Convert images to WebP/AVIF + generate responsive sizes</li>
+                     <li class="doc-list__item">Optimize JPG/PNG/SVG and compress assets</li>
+                     <li class="doc-list__item">Compile SCSS → CSS (minify, autoprefix, group media queries)</li>
+                     <li class="doc-list__item">Format HTML and resolve aliases (and PUG → HTML if enabled)</li>
+                     <li class="doc-list__item">Bundle and optimize JavaScript (only used code goes into final output)
+                     </li>
+                     <li class="doc-list__item">Copy static files from the configured folder</li>
+                     <li class="doc-list__item">Optional: generate critical CSS / non-minified copies (if enabled)</li>
+                  </ul>
+               </section>
+
+               <!-- =========================
+					5) Common errors
+					========================== -->
+               <section class="doc-section" id="errors" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Common errors & fixes</h2>
+
+                  <div class="doc-grid">
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Red ERR! in terminal</h3>
+                        <p class="doc-p">If the browser doesn’t open or you see critical errors, check:</p>
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><strong>Node.js</strong> is installed</li>
+                           <li class="doc-list__item"><strong>Python</strong> is installed (latest version)</li>
+                           <li class="doc-list__item">Your editor/terminal has enough permissions</li>
+                           <li class="doc-list__item">No <strong>#</strong> or <strong>!</strong> symbols in the full
+                              project path</li>
+                           <li class="doc-list__item">Folder/file names are Latin only, no spaces</li>
+                        </ul>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Yellow WARN during install</h3>
+                        <p class="doc-p">
+                           WARN messages during <code>npm i</code> are usually not critical. Focus on red ERR!.
+                        </p>
+                     </div>
+
+                  </div>
+               </section>
+
+               <!-- =========================
+					6) Editor setup
+					========================== -->
+               <section class="doc-section" id="editor" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Editor setup (recommended)</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     To get the best experience, configure your editor for path aliases and snippets.
+                     This speeds up development and reduces mistakes.
+                  </p>
+
+                  <div class="doc-grid">
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Path aliases</h3>
+                        <p class="doc-p">
+                           The template uses aliases to avoid long relative paths. Your editor can autocomplete files,
+                           and during build aliases are replaced with correct paths automatically.
+                        </p>
+
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Example</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">&lt;img src="@img/cover.jpg" alt="Cover"&gt;</code></pre>
+                        </div>
+
+                        <p class="doc-p">
+                           Recommended extension: <strong>Path Autocomplete</strong>.
+                        </p>
+                     </div>
+
+                     <div class="doc-card">
+                        <h3 class="doc-h3">Snippets</h3>
+                        <p class="doc-p">
+                           Snippets let you insert ready code structures instantly. The template can add its own
+                           snippets
+                           and they work alongside your personal snippets.
+                        </p>
+
+                        <div class="codeblock">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Example (data-anim)</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-spollers class="spollers"&gt;
+	&lt;details class="spollers__item"&gt;
+		&lt;summary class="spollers__title"&gt;Spoiler title&lt;/summary&gt;
+		&lt;div class="spollers__body"&gt;Content...&lt;/div&gt;
+	&lt;/details&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+
+                     </div>
+
+                  </div>
+               </section>
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Every project you start without a solid foundation costs you time.
+                     Download Animmaster Vite Template and start your next project with a structure that already works.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <!-- Divider -->
+               <div class="doc-divider"></div>
+
+               <!-- Next -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/architecture.html">
+                     Next: Project Architecture: files & folders
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- TOC -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#install">Installation</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#video-guide">Video Guide</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#modes">Run
+                           modes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#dev">Development mode</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#build">Production build</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#errors">Common
+                           errors</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#editor">Editor
+                           setup</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download
+                           </a></li>
+                  </ol>
+               </div>
+            </aside>
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

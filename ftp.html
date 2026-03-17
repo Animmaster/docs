@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>FTP deployment</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072929"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072929">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-ftpdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               FTP deployment
+               <span class="doc-hero__title-sub">
+                  Upload the build directly to your server
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               In <strong>Animmaster Vite Template</strong> you can automatically
+               build your project and upload the final <code>dist</code> folder
+               to a hosting server using FTP.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+            <p class="doc-micro">
+               Production build • FTP upload • One command workflow
+            </p>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="about" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is FTP deployment?</h2>
+
+                  <p class="doc-p">
+                     Animmaster Vite Template includes a built-in FTP deployment feature that allows you to
+                     upload the production-ready project (<code>dist</code> folder)
+                     directly to a remote server or hosting.
+                  </p>
+
+                  <p class="doc-p">
+                     This is useful when:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">you deploy static sites to shared hosting</li>
+                     <li class="doc-list__item">the server does not support Git</li>
+                     <li class="doc-list__item">you want a fast one-command upload</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) FTP configuration -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="config" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">FTP configuration</h2>
+
+                  <p class="doc-p">
+                     All FTP settings are configured in <code>template.config.js</code>
+                     inside the <code>ftp</code> section.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">template.config.js</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+ ftp: {
+  host: "ftp.your-host.com",
+  port: 21,
+  remoteDir: "/public_html/%projectName%",
+  user: "ftp-user",
+  password: "ftp-password"
+}</code></pre>
+                  </div>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item"><code>host</code> — FTP server hostname</li>
+                     <li class="doc-list__item"><code>port</code> — FTP port (usually 21)</li>
+                     <li class="doc-list__item">
+                        <code>remoteDir</code> — destination folder on the server.
+                        You can use <code>%projectName%</code> to automatically insert
+                        the project folder name.
+                     </li>
+                     <li class="doc-list__item"><code>user</code> — FTP username</li>
+                     <li class="doc-list__item"><code>password</code> — FTP password</li>
+                  </ul>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Security note</div>
+                     <div class="doc-callout__text">
+                        Avoid committing real FTP credentials to public repositories.
+                        Use environment variables whenever possible.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Deploy command -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="command" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Deploy command</h2>
+
+                  <p class="doc-p">
+                     After configuring FTP access, run the following command:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm run deploy</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     This command automatically:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">runs a production build</li>
+                     <li class="doc-list__item">creates or updates the <code>dist</code> folder</li>
+                     <li class="doc-list__item">uploads all files to the FTP server</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Notes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="notes" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Notes &amp; recommendations</h2>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Connection stability</div>
+                     <div class="doc-callout__text">
+                        Make sure your FTP connection is stable during deployment to
+                        avoid partially uploaded builds.
+                     </div>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Production only</div>
+                     <div class="doc-callout__text">
+                        FTP deployment always works in production mode and uploads
+                        only optimized files.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     FTP deployment is fully integrated into the Animmaster Vite Template workflow.
+                     Download the template and automate your hosting uploads today.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/adaptvalue.html">
+                     Next: Responsive adaptive property
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#about">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#config">Configuration</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#command">Deploy command</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#notes">Notes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

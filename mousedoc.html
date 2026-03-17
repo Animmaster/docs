@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Mouse</title>  <script type="module" crossorigin src="./js/app.min.js?v=1773771072926"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1773771072926">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Premium Pack</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.animmasterlib.dev/">101 PRO components</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-mousedoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Mouse Parallax
+               <span class="doc-hero__title-sub">
+                  Mouse reactive parallax movement
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Mouse Parallax component moves elements depending on the mouse position.
+               It creates depth and subtle motion in UI elements such as images,
+               decorations, cards, or backgrounds.
+            </p>
+
+            <div class="doc-actions">
+
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+
+            </div>
+
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Layout -->
+         <!-- ========================================================= -->
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     What the Mouse Parallax module does
+                  </h2>
+
+                  <p class="doc-p">
+                     This module moves elements based on the cursor position,
+                     creating a parallax effect.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Smooth mouse-based parallax animation
+                     </li>
+
+                     <li class="doc-list__item">
+                        Adjustable sensitivity for X and Y axis
+                     </li>
+
+                     <li class="doc-list__item">
+                        Optional axis inversion
+                     </li>
+
+                     <li class="doc-list__item">
+                        Optional wrapper for container-based tracking
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+
+                     <div class="doc-callout__title">
+                        Files location
+                     </div>
+
+                     <div class="doc-callout__text">
+                        HTML / SCSS / JS files live in:
+                        <code>src/components/effects/mouse-parallax/</code>
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Basic usage
+                  </h2>
+
+                  <p class="doc-p">
+                     Add the attribute <code>data-anim-mouse</code> to any element.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Basic parallax markup
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-mouse&gt;&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Sensitivity -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="sensitivity" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Movement sensitivity
+                  </h2>
+
+                  <p class="doc-p">
+                     Control how strongly the element reacts to mouse movement.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <code>data-anim-mouse-cx</code> — X axis sensitivity
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-mouse-cy</code> — Y axis sensitivity
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout">
+
+                     <div class="doc-callout__title">
+                        Tip
+                     </div>
+
+                     <div class="doc-callout__text">
+                        Higher values produce smaller movement.
+                     </div>
+
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Sensitivity example
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div
+	data-anim-mouse
+	data-anim-mouse-cx="150"
+	data-anim-mouse-cy="120"&gt;
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Axis direction -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="direction" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Axis direction
+                  </h2>
+
+                  <p class="doc-p">
+                     You can invert the movement direction.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <code>data-anim-mouse-dxr</code> — invert X axis
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-mouse-dyr</code> — invert Y axis
+                     </li>
+
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Axis inversion
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div
+	data-anim-mouse
+	data-anim-mouse-dxr
+	data-anim-mouse-dyr&gt;
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Animation speed -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="speed" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Animation smoothness
+                  </h2>
+
+                  <p class="doc-p">
+                     Use <code>data-anim-mouse-a</code> to control animation speed.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Animation speed
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div
+	data-anim-mouse
+	data-anim-mouse-a="80"&gt;
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Wrapper -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="wrapper" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Wrapper tracking
+                  </h2>
+
+                  <p class="doc-p">
+                     You can limit mouse tracking to a container using
+                     <code>data-anim-mouse-wrapper</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Wrapper example
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-mouse-wrapper&gt;
+
+	&lt;div data-anim-mouse&gt;&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Best practice -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="bestpractice" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Best practice for images
+                  </h2>
+
+                  <p class="doc-p">
+                     When applying parallax to images, make them slightly larger
+                     than their container to avoid visible gaps during movement.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Example CSS
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">img {
+
+	width: 130%;
+	height: 130%;
+
+	top: -15%;
+	left: -15%;
+
+}</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Download
+                  </h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Add beautiful interactive motion effects to your UI
+                     with a single attribute.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/parallaxdoc.html">
+
+                     Next: Parallax component
+
+                     <span class="doc-next__arrow">
+                        →
+                     </span>
+
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc" aria-label="On this page">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">
+                     On this page
+                  </div>
+
+                  <ol class="doc-toc__list">
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#intro">Overview</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#usage">Usage</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#sensitivity">Sensitivity</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#direction">Direction</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#speed">Speed</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#wrapper">Wrapper</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#bestpractice">Best practice</a></li>
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#download">Download</a></li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>
