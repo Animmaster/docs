@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Header</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247398"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247398">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-headerdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Header
+               <span class="doc-hero__title-sub">Site header component + optional scroll plugins</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The template includes a dedicated header component with a clean base layout and a plugin system.
+               Plugins allow you to add behavior (like scroll states or auto-hide) without bloating the base header.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+   
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Overview</h2>
+
+                  <p class="doc-p">
+                     The Header component is a reusable site top bar (logo, navigation, actions, burger, etc.).
+                     It ships with a base structure and styling, plus a plugin folder for optional behaviors.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Why plugins?</div>
+                     <div class="doc-callout__text">
+                        You can keep the header markup clean and enable only the behavior you need
+                        (by adding simple data attributes).
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Header files are located in <code>src/components/layout/header</code>.
+                     Inside you’ll find:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS file for component logic (if needed).</li>
+                     <li class="doc-list__item">HTML file with base header markup.</li>
+                     <li class="doc-list__item">SCSS file for styling the header.</li>
+                  </ul>
+
+                  <p class="doc-p">
+                     Plugins live in <code>src/components/layout/header/plugins</code>.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Using the component</h2>
+
+                  <p class="doc-p">
+                     Connect the header HTML to your page using <code>&lt;include&gt;</code>.
+                     In the starter setup it’s already included by default in shared layout.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Include header markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;include src="@components/layout/header/header.html"&gt;&lt;/include&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        If your header uses JS/SCSS logic, it will be connected automatically
+                        by the template’s component system.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Plugins: Scroll -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="plugins" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Plugins</h2>
+
+                  <p class="doc-p">
+                     Header plugins are optional behaviors you enable via data attributes.
+                     The most common one is the <strong>Scroll</strong> plugin.
+                  </p>
+
+                  <h3 class="doc-h3">Plugin: Scroll</h3>
+
+                  <p class="doc-p">
+                     The Scroll plugin manages header state classes while the page scrolls.
+                     To enable it, add <code>data-anim-header</code> and <code>data-anim-header-scroll</code>
+                     to your <code>&lt;header&gt;</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable scroll state</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;header data-anim-header data-anim-header-scroll class="header"&gt;
+	...
+&lt;/header&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     When you scroll more than 1px, the header receives the class
+                     <code>--header-scroll</code>.
+                  </p>
+
+                  <h3 class="doc-h3">Custom scroll threshold</h3>
+
+                  <p class="doc-p">
+                     To change how many pixels must be scrolled before activating the class,
+                     set a value for <code>data-anim-header-scroll</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Set threshold (px)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;header data-anim-header data-anim-header-scroll="500" class="header"&gt;
+	...
+&lt;/header&gt;</code></pre>
+                  </div>
+
+                  <h3 class="doc-h3">Auto-hide header on scroll down</h3>
+
+                  <p class="doc-p">
+                     To enable “disappearing” header behavior (hide on scroll down, show after a short pause),
+                     add <code>data-anim-header-scroll-show</code>.
+                     By default, the show delay is 500ms.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable auto-hide (default delay)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;header
+	data-anim-header
+	data-anim-header-scroll
+	data-anim-header-scroll-show
+	class="header"&gt;
+	...
+&lt;/header&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     To change the delay, set a value (ms) for <code>data-anim-header-scroll-show</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Auto-hide with custom delay (ms)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;header
+	data-anim-header
+	data-anim-header-scroll
+	data-anim-header-scroll-show="1000"
+	class="header"&gt;
+	...
+&lt;/header&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Styling plugin states</div>
+                     <div class="doc-callout__text">
+                        To customize scroll plugin styles, use:
+                        <code>src/components/layout/header/plugins/scroll/scroll.scss</code>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build clean headers with optional scroll behavior and a plugin-first structure.
+                     Download the template and ship faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+             
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/daynight.html">
+                     Next: Day/night component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#plugins">Plugins</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

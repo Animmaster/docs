@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Component: Before / after</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247401"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247401">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-beforeafterdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Before / After
+               <span class="doc-hero__title-sub">Compare two images by dragging the divider</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The <strong>Before/After</strong> component displays two images in one block and lets the user
+               reveal more of either image by dragging the separating line.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+       
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Files are located in <code>src/components/layout/beforeafter</code>.
+                     Inside you’ll find the JS file, an HTML example, and an SCSS file for styling.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Basic markup -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="markup" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic markup</h2>
+
+                  <p class="doc-p">
+                     Add the wrapper <code>data-anim-beforeafter</code>, two layers (<code>before</code> and
+                     <code>after</code>),
+                     and a divider/handle element (<code>arrow</code>). The component will auto-initialize when it
+                     detects the
+                     required attributes.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Before / After — skeleton</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-beforeafter class="before-after"&gt;
+	&lt;div data-anim-beforeafter-before class="before-after__item"&gt;...&lt;/div&gt;
+	&lt;div data-anim-beforeafter-after class="before-after__item"&gt;...&lt;/div&gt;
+	&lt;div data-anim-beforeafter-arrow class="before-after__arrow"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) With images -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="images" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Example with images</h2>
+
+                  <p class="doc-p">
+                     Place your images inside the corresponding blocks using <code>&lt;img&gt;</code>.
+                     Then style the divider/handle element (<code>data-anim-beforeafter-arrow</code>) as you like.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Before / After — example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-beforeafter class="before-after"&gt;
+
+	&lt;div data-anim-beforeafter-before class="before-after__item"&gt;
+		&lt;img src="@img/image-1.jpg" alt="Image"&gt;
+	&lt;/div&gt;
+
+	&lt;div data-anim-beforeafter-after class="before-after__item"&gt;
+		&lt;img src="@img/image-2.jpg" alt="Image"&gt;
+	&lt;/div&gt;
+
+	&lt;div data-anim-beforeafter-arrow class="before-after__arrow"&gt;&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Start by styling <code>.before-after</code> with a fixed aspect ratio (or a set height),
+                        make both items fill the wrapper, and then style <code>.before-after__arrow</code> as a visible
+                        drag handle / divider line.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Need fast image comparisons for portfolios, case studies, or redesign demos?
+                     Download the template and build a Before/After block in minutes.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+              
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/gallery.html">
+                     Next: Gallery component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#markup">Basic
+                           markup</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#images">Example with images</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

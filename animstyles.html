@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Styles</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247401"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247401">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-stylesdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Working with styles 
+               <span class="doc-hero__title-sub"><code>settings.scss</code> &amp; <code>style.scss</code></span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               Animmaster Vite Template uses <strong>SASS</strong> in <strong>SCSS</strong> syntax.
+               Thanks to the component approach, you can keep styles per page and per block inside
+               <code>src/components</code>, and the build can split CSS by pages for better performance.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Intro -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">How styles are organized</h2>
+
+                  <p class="doc-p">
+                     The template is built around a component-first architecture. That means every page/block can have
+                     its
+                     own SCSS file inside <code>src/components</code>. This is more convenient for maintenance and allows the system to separate styles across pages (if enabled).
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Recommended units</div>
+                     <div class="doc-callout__text">
+                        Work mostly in <strong>PX</strong>. In production the system can automatically convert PX → REM
+                        (if enabled in build settings). Use <code>%</code> and <code>em</code> only where it makes
+                        sense.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) settings.scss -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="settings" data-anim-watcher="navigator">
+                  <h2 class="doc-h2"><code>settings.scss</code> — the main style settings</h2>
+
+                  <p class="doc-p">
+                     File: <code>src/styles/settings.scss</code> — this is the main default style settings file: fonts, colors, adaptive grid, breakpoints, and mixin logic (including the
+                     “responsive property”).
+                  </p>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        <code>settings.scss</code> automatically connects to every SCSS in the project — it’s a convenient place to start working on the interface.
+                     </div>
+                  </div>
+
+                  <!-- Fonts block -->
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Default font setup</h3>
+                        <p class="doc-p">
+                           After you connect fonts (local or Google Fonts), set these variables:
+                        </p>
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><code>$fontFamily</code> — default font family (with fallback)
+                           </li>
+                           <li class="doc-list__item"><code>$fontSize</code> — default font size (number only)</li>
+                           <li class="doc-list__item"><code>$mainColor</code> — default text color</li>
+                        </ul>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Example values</h3>
+                        <div class="codeblock" data-codeblock="">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">src/styles/settings.scss</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">
+$fontFamily: "Montserrat", sans-serif;
+$fontSize: 16; // number only
+$mainColor: #000;</code></pre>
+                        </div>
+                     </div>
+                  </div>
+
+                  <p class="doc-p">
+                     You can also store your own design tokens here (colors palette, spacing, radiuses, etc.).
+                  </p>
+
+                  <!-- Grid setup -->
+                  <h3 class="doc-h3">Adaptive grid settings</h3>
+                  <p class="doc-p">
+                     The template supports two behaviors for the main container: fluid (responsive) or breakpoint-based.
+                     Before layout work, set these variables:
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li><code>$minWidth</code> — minimum supported viewport width (usually <code>320</code>)</li>
+                        <li><code>$maxWidth</code> — full design canvas width (for example <code>1920</code> or
+                           <code>1440</code>)</li>
+                        <li><code>$maxWidthContainer</code> — content container width (for example <code>1170</code>)
+                        </li>
+                        <li><code>$containerPadding</code> — left+right container padding (number only)</li>
+                        <li><code>$containerWidth</code> — usually calculated automatically:
+                           <code>$maxWidthContainer + $containerPadding</code>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        These values also affect the “responsive property” mixin logic (adaptiveValue).
+                     </div>
+                  </div>
+
+                  <!-- Breakpoints -->
+                  <h3 class="doc-h3">Breakpoints</h3>
+                  <p class="doc-p">
+                     Standard breakpoint variables for device groups:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Breakpoints example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">$pc: $containerWidth;
+$tablet: 991.98;
+$mobile: 767.98;
+$mobileSmall: 479.98;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     For faster media queries you can use snippets like <code>md1</code>…<code>md4</code> (or Mobile
+                     First: <code>mmd1</code>…<code>mmd4</code>).
+                  </p>
+
+                  <!-- Responsive type -->
+                  <h3 class="doc-h3">Container behavior (<code>$responsiveType</code>)</h3>
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        <code>1</code> — fluid/responsive: container shrinks with browser, no fixed breakpoints
+                     </li>
+                     <li class="doc-list__item">
+                        <code>2</code> — breakpoint-based: container changes width by your breakpoint variables
+                     </li>
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Responsive type</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">$responsiveType: 1;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) style.scss -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="style" data-anim-watcher="navigator">
+                  <h2 class="doc-h2"><code>style.scss</code> — global project styles</h2>
+
+                  <p class="doc-p">
+                     File: <code>src/styles/style.scss</code> — the main global stylesheet loaded on every page.
+                     Here you’ll find base styles for <code>&lt;body&gt;</code>, the <code>.wrapper</code>,
+                     and the universal container selector (<code>*__container</code>), based on values from
+                     <code>settings.scss</code>.
+                  </p>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Optional CSS variables file</h3>
+                        <p class="doc-p">
+                           At the top of <code>style.scss</code> you can optionally connect a separate CSS variables
+                           file:
+                           <code>src/styles/includes/variables.css</code>.
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Remote fonts section</h3>
+                        <p class="doc-p">
+                           This file also has a dedicated section where you can connect remote fonts (for example Google
+                           Fonts).
+                           You can use VS Code plugins (like Google Fonts) to generate <code>@import</code> or
+                           <code>&lt;link&gt;</code>.
+                        </p>
+                     </div>
+                  </div>
+
+                  <h3 class="doc-h3">Core selectors you’ll see</h3>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li>
+                           <code>body {}</code> — base body styles
+                           <ul class="doc-tree__list">
+                              <li><code>[data-anim-scrolllock]</code> — scroll lock state (styles prepared)</li>
+                              <li><code>[data-anim-loaded]</code> — “site loaded” state to reveal content after load
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <code>.wrapper {}</code> — wrapper for the whole page content (footer push-down, overflow
+                           safety like <code>overflow: clip;</code>, etc.)
+                        </li>
+                        <li>
+                           Container selector for any class that contains <code>__container</code>
+                           <br>
+                           Example:
+                           <code>&lt;div class="block__container"&gt;...&lt;/div&gt;</code>
+                           (you can use snippet <code>cnt</code>)
+                        </li>
+                        <li>
+                           After all defaults — you can add your own global styles that apply to every page.
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Pro tip</div>
+                     <div class="doc-callout__text">
+                        Keep page/block styles inside <code>src/components</code>, and keep <code>style.scss</code> for
+                        truly global rules only.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Build options -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="build-options" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Build settings related to styles</h2>
+
+                  <p class="doc-p">
+                     In <code>template.config.js</code>, the <code>styles</code> section controls the SCSS/CSS pipeline:
+                  </p>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>styles → tailwindcss</code></h3>
+                        <p class="doc-p">
+                           Enables Tailwind CSS. When enabled, <code>src/styles/libs/reset.css</code> is disabled.
+                           (<code>true/false</code>)
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>styles → pxtorem</code></h3>
+                        <p class="doc-p">
+                           Automatically converts PX → REM in production builds. (<code>true/false</code>)
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>styles → critical</code></h3>
+                        <p class="doc-p">
+                           Generates critical CSS and injects it into HTML for faster first paint.
+                           (<code>true/false</code>)
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>styles → codesplit</code></h3>
+                        <p class="doc-p">
+                           Splits styles by pages so each HTML page loads only what it needs. (<code>true/false</code>)
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>styles → devfiles</code></h3>
+                        <p class="doc-p">
+                           Creates unminified copies of CSS files in production builds. (<code>true/false</code>)
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">When to enable code splitting</div>
+                     <div class="doc-callout__text">
+                        If your project has many pages/components, <code>codesplit</code> helps performance because
+                        users don’t download unused CSS.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build faster with a clean SCSS system and scalable structure.
+                     Download Animmaster Vite Template and start your next project with a setup that already works.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/workhtml.html">
+                     Next: Working with HTML , functionality
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Intro</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#settings">settings.scss</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#style">style.scss</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#build-options">Build options</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

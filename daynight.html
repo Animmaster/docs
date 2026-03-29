@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Day / Night</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247399"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247399">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-darklitedoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Dark / Light Theme
+               <span class="doc-hero__title-sub">
+                  Automatic and manual theme switching system
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This module enables a dark / light theme system for your project.
+               It supports automatic theme detection based on system preferences,
+               time-based switching, and manual user control with persistent
+               settings saved in <code>localStorage</code>.
+            </p>
+
+            <div class="doc-actions">
+
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+
+            </div>
+
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Layout -->
+         <!-- ========================================================= -->
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="about" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     What the theme module does
+                  </h2>
+
+                  <p class="doc-p">
+                     When the attribute
+                     <code>data-anim-darklite</code>
+                     is added to the page, the module enables automatic
+                     theme switching logic.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Applies light or dark theme automatically
+                     </li>
+
+                     <li class="doc-list__item">
+                        Detects system theme via
+                        <code>prefers-color-scheme</code>
+                     </li>
+
+                     <li class="doc-list__item">
+                        Allows manual switching via buttons
+                     </li>
+
+                     <li class="doc-list__item">
+                        Saves user preference in
+                        <code>localStorage</code>
+                     </li>
+
+                     <li class="doc-list__item">
+                        Supports automatic time-based theme switching
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+
+                     <div class="doc-callout__title">
+                        Files location
+                     </div>
+
+                     <div class="doc-callout__text">
+                        HTML / SCSS / JS files live in
+                        <code>src/components/ui/darklite/</code>
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Enable -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="enable" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Enable the theme system
+                  </h2>
+
+                  <p class="doc-p">
+                     Add the required attribute
+                     <code>data-anim-darklite</code>
+                     to the page wrapper.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Enable theme module
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;body data-anim-darklite&gt;
+...
+&lt;/body&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Buttons -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="buttons" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Manual theme control
+                  </h2>
+
+                  <p class="doc-p">
+                     You can add buttons to toggle or reset the theme manually.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Theme buttons
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;button data-anim-darklite-set&gt;
+Toggle theme
+&lt;/button&gt;
+
+&lt;button data-anim-darklite-reset&gt;
+Reset theme
+&lt;/button&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Time mode -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="time" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Time based theme
+                  </h2>
+
+                  <p class="doc-p">
+                     You can enable automatic dark theme during specific hours
+                     using the attribute
+                     <code>data-anim-darklite-time</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Time based theme
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;body data-anim-darklite data-anim-darklite-time="18,5"&gt;</code></pre>
+
+                  </div>
+
+                  <div class="doc-callout">
+
+                     <div class="doc-callout__title">
+                        Example
+                     </div>
+
+                     <div class="doc-callout__text">
+                        In this example, dark mode will activate from
+                        18:00 until 05:00.
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- HTML states -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="states" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     HTML theme states
+                  </h2>
+
+                  <p class="doc-p">
+                     The module automatically adds theme attributes to the
+                     <code>&lt;html&gt;</code> element.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <code>data-anim-darklite-light</code>
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-darklite-dark</code>
+                     </li>
+
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Priority -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="priority" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Theme priority order
+                  </h2>
+
+                  <p class="doc-p">
+                     The module determines the active theme using the
+                     following priority:
+                  </p>
+
+                  <ol class="doc-list">
+
+                     <li class="doc-list__item">
+                        Saved user preference
+                     </li>
+
+                     <li class="doc-list__item">
+                        Time based theme
+                     </li>
+
+                     <li class="doc-list__item">
+                        System theme (<code>prefers-color-scheme</code>)
+                     </li>
+
+                  </ol>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Download
+                  </h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Download Animmaster Vite Template and start building
+                     projects with a ready-to-use UI system and build
+                     pipeline.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/cursordoc.html">
+
+                     Next: Component: Custom Cursor
+
+                     <span class="doc-next__arrow">
+                        →
+                     </span>
+
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc" aria-label="On this page">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">
+                     On this page
+                  </div>
+
+                  <ol class="doc-toc__list">
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#about">
+                           Overview
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#enable">
+                           Enable
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#buttons">
+                           Buttons
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#time">
+                           Time mode
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#states">
+                           HTML states
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#priority">
+                           Priority
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#download">
+                           Download
+                        </a>
+                     </li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

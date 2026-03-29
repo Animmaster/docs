@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Adapt Value</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247400"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247400">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-adaptivevaluedoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Responsive property
+               <span class="doc-hero__title-sub">
+                  The <code>adaptiveValue</code> SCSS mixin for smooth property scaling
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The <code>adaptiveValue</code> mixin automatically changes the value of a CSS property depending on the
+               screen width:
+               from the starting value on wide screens to the final value on smaller ones.
+               You can set custom width ranges and behavior modes outside of those ranges.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Intro -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is it?</h2>
+
+                  <p class="doc-p">
+                     With the SCSS mixin <strong>“Responsive property”</strong>
+                     you can set up an automatic change of any CSS property value that has a numeric value
+                     (for example: <code>font-size</code>, <code>padding</code>, <code>gap</code>, etc.).
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Main idea</div>
+                     <div class="doc-callout__text">
+                        Instead of tons of media queries, you set a <strong>start</strong> and <strong>end</strong>
+                        value —
+                        and the mixin smoothly “interpolates” between them across the required widths.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Using the mixin</h2>
+
+                  <p class="doc-p">
+                     Inside an SCSS selector, call it (usually via the <code>av</code> snippet):
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">SCSS</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">@include adaptiveValue("property", start, end);</code></pre>
+                  </div>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item"><strong>property</strong> — the CSS property (as a string) you want to
+                        make responsive.</li>
+                     <li class="doc-list__item"><strong>start</strong> — the starting value (number only, without
+                        <code>px</code>).</li>
+                     <li class="doc-list__item"><strong>end</strong> — the ending value (number only, without
+                        <code>px</code>).</li>
+                  </ul>
+
+                  <p class="doc-p doc-p--margin-b">Examples:</p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Examples</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+@include adaptiveValue("font-size", 50, 20);
+@include adaptiveValue("padding-top", 80, 10);
+@include adaptiveValue("gap", 24, 12);</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) How it works -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="logic" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">How it works</h2>
+
+                  <p class="doc-p">
+                     The mixin works based on variables from <code>src/styles/settings.scss</code>:
+                     <code>$minWidth</code>, <code>$maxWidth</code>, <code>$maxWidthContainer</code>,
+                     <code>$containerPadding</code> and <code>$containerWidth</code>.
+                  </p>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">By default</div>
+                     <div class="doc-callout__text">
+                        If <code>$maxWidthContainer &gt; 0</code> — scaling happens between <code>$containerWidth</code>
+                        and <code>$minWidth</code>.<br>
+                        If <code>$maxWidthContainer = 0</code> — scaling happens between <code>$maxWidth</code> and
+                        <code>$minWidth</code>.
+                     </div>
+                  </div>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Wider than the “from” width — the value equals the
+                        <strong>start</strong> value.</li>
+                     <li class="doc-list__item">Below <code>$minWidth</code> — the value equals the <strong>end</strong>
+                        value.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Modes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="modes" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Modes</h2>
+
+                  <p class="doc-p">
+                     You can configure the behavior outside the range by specifying a mode:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">SCSS</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">@include adaptiveValue("property", start, end, mode);</code></pre>
+                  </div>
+
+                  <p class="doc-p doc-p--margin-b">
+                     <strong>mode</strong> can be <code>0</code> (or omitted), <code>1</code>, <code>2</code>,
+                     <code>3</code>:
+                  </p>
+
+                  <div class="doc-grid doc-grid--no-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">0 (or omitted)</h3>
+                        <p class="doc-p">
+                           Wider than “from” — <strong>start</strong>, below “to” — <strong>end</strong>.
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">1</h3>
+                        <p class="doc-p">
+                           Works <strong>only</strong> inside the range (or the default range).
+                           Outside it — the default value / inheritance applies.
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">2</h3>
+                        <p class="doc-p">
+                           Wider than “from” — <strong>start</strong>, below “to” — default value / inheritance.
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">3</h3>
+                        <p class="doc-p">
+                           Wider than “from” — default value / inheritance, below “to” — <strong>end</strong>.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">@include adaptiveValue("font-size", 50, 20, 1);</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Custom ranges -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="ranges" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Custom width ranges</h2>
+
+                  <p class="doc-p">
+                     You can define your own width range where scaling happens:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">SCSS</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">@include adaptiveValue("property", start, end, mode, widthFrom, widthTo);</code></pre>
+                  </div>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item"><code>widthFrom</code> — the width below which scaling starts (number
+                        only, without <code>px</code>).</li>
+                     <li class="doc-list__item"><code>widthTo</code> — the width down to which scaling continues (number
+                        only, without <code>px</code>).</li>
+                  </ul>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Warning</div>
+                     <div class="doc-callout__text">
+                        If you specify custom ranges — <strong>mode is required</strong>.
+                     </div>
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example (custom range)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">@include adaptiveValue("font-size", 50, 20, 0, 800, 480);</code></pre>
+                  </div>
+
+                  <p class="doc-p doc-p--margin-b">
+                     You can also make multiple calls with different ranges:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example (multi-range)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+@include adaptiveValue("font-size", 50, 20, 2, 800, 480);
+@include adaptiveValue("font-size", 20, 10, 3, 480, 320);</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Don’t add extra media queries “for this” — it’s better to combine modes + ranges.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Where it lives -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Where is the mixin located?</h2>
+
+                  <p class="doc-p">
+                     The <code>adaptiveValue</code> mixin is located in:
+                     <code>src/styles/includes/mixins.scss</code>
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Want the same responsive approach without extra media queries?
+                     Download the template and start using <code>adaptiveValue</code> in your projects right away.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/dynamic.html">
+                     Next: Component: Dynamic Adapt
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Intro</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#logic">How it
+                           works</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#modes">Modes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#ranges">Custom
+                           ranges</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

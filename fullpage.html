@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Full page</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247397"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247397">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-fullpagedoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: FullPage
+               <span class="doc-hero__title-sub">Full-screen sections + optional bullets + switch effects</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This component adds full-screen (section-by-section) scrolling.
+               By default each section takes at least the full viewport height, and the page scroll “snaps”
+               through sections. You can enable bullets navigation and switch transition effects.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+     
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Overview</h2>
+
+                  <p class="doc-p">
+                     The FullPage component creates a “screen-by-screen” scroll experience.
+                     You split the page into sections, and the component handles switching between them.
+                     Optionally, you can add bullets for navigation and choose a transition effect.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Best use cases</div>
+                     <div class="doc-callout__text">
+                        Presentations, landing pages, portfolios, storytelling pages, and any UI where you want
+                        clear section-based navigation.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Files are located in <code>src/components/layout/fullpage</code>.
+                     Inside you’ll find:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS file with the full-page scroll logic.</li>
+                     <li class="doc-list__item">HTML example snippet.</li>
+                     <li class="doc-list__item">SCSS file for styling and effects.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-fullpage</code> to the wrapper and
+                     <code>data-anim-fullpage-section</code> to each section.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">FullPage — minimal markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-fullpage class="some-class"&gt;
+	&lt;div data-anim-fullpage-section class="some-class__section"&gt; ... &lt;/div&gt;
+	&lt;div data-anim-fullpage-section class="some-class__section"&gt; ... &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Each section should be a clean, self-contained block. Use consistent spacing and avoid
+                        huge nested scroll areas inside sections unless you really need them.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Bullets -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="bullets" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Bullets navigation</h2>
+
+                  <p class="doc-p">
+                     To add bullets (section switch buttons), add the attribute
+                     <code>data-anim-fullpage-bullets</code> to the FullPage wrapper.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">FullPage — bullets enabled</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-fullpage data-anim-fullpage-bullets class="some-class"&gt;
+	&lt;div data-anim-fullpage-section class="some-class__section"&gt; ... &lt;/div&gt;
+	&lt;div data-anim-fullpage-section class="some-class__section"&gt; ... &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Effects -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="effects" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Switch effects</h2>
+
+                  <p class="doc-p">
+                     To change the transition effect, add <code>data-anim-fullpage-effect</code> to the wrapper.
+                     Supported values: <code>slider</code> (default), <code>fade</code>, <code>cards</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">FullPage — fade effect example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-fullpage data-anim-fullpage-effect="fade" class="some-class"&gt;
+	&lt;div data-anim-fullpage-section class="some-class__section"&gt; ... &lt;/div&gt;
+	&lt;div data-anim-fullpage-section class="some-class__section"&gt; ... &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        Effects may require different styling for best visuals. Check the component SCSS and adjust
+                        section backgrounds, spacing, and overflow as needed.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build full-screen scrolling pages with sections, bullets navigation, and smooth effects.
+                     Download the template and start faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+           
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/counter.html">
+                     Next: Component: Digital Counter
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Basic
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#bullets">Bullets</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#effects">Effects</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

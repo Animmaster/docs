@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title> Component: Ripple</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247392"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247392">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-rippledoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Ripple Effect
+               <span class="doc-hero__title-sub">
+                  Click wave animation for buttons and UI elements
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Ripple Effect component creates a wave animation when
+               the user clicks an element. It improves interaction feedback
+               and works perfectly for buttons, cards, navigation items,
+               and other interactive UI elements.
+            </p>
+
+            <div class="doc-actions">
+
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+
+            </div>
+
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Layout -->
+         <!-- ========================================================= -->
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     What the Ripple Effect module does
+                  </h2>
+
+                  <p class="doc-p">
+                     This module creates a ripple animation that expands
+                     from the click position inside the element.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Creates ripple animation on click
+                     </li>
+
+                     <li class="doc-list__item">
+                        Automatically positions ripple at click location
+                     </li>
+
+                     <li class="doc-list__item">
+                        Removes ripple element after animation
+                     </li>
+
+                     <li class="doc-list__item">
+                        Supports single ripple mode
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+
+                     <div class="doc-callout__title">
+                        Files location
+                     </div>
+
+                     <div class="doc-callout__text">
+                        HTML / SCSS / JS files live in:
+                        <code>src/components/ui/ripple/</code>
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Basic usage
+                  </h2>
+
+                  <p class="doc-p">
+                     Add the attribute <code>data-anim-ripple</code>
+                     to any clickable element.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Basic ripple button
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;button data-anim-ripple&gt;
+	Button
+&lt;/button&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Once mode -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="once" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Single ripple mode
+                  </h2>
+
+                  <p class="doc-p">
+                     By default, multiple ripples can appear simultaneously.
+                     To allow only one ripple element at a time,
+                     use the value <code>once</code>.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <code>data-anim-ripple="once"</code>
+                     </li>
+
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Single ripple example
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;button data-anim-ripple="once"&gt;
+	Button
+&lt;/button&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- How it works -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="logic" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     How the ripple animation works
+                  </h2>
+
+                  <ol class="doc-list">
+
+                     <li class="doc-list__item">
+                        User clicks the element
+                     </li>
+
+                     <li class="doc-list__item">
+                        Ripple <code>&lt;span&gt;</code> element is created
+                     </li>
+
+                     <li class="doc-list__item">
+                        Ripple is positioned at click coordinates
+                     </li>
+
+                     <li class="doc-list__item">
+                        CSS animation expands the ripple
+                     </li>
+
+                     <li class="doc-list__item">
+                        Ripple element is removed automatically
+                     </li>
+
+                  </ol>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Download
+                  </h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Add beautiful interaction feedback to your UI
+                     with a simple ripple animation.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/screenshot.html">
+
+                     Next: Screenshot
+
+                     <span class="doc-next__arrow">
+                        →
+                     </span>
+
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc" aria-label="On this page">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">
+                     On this page
+                  </div>
+
+                  <ol class="doc-toc__list">
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#intro">
+                           Overview
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#usage">
+                           Usage
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#once">
+                           Single ripple
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#logic">
+                           How it works
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto="#download">
+                           Download
+                        </a>
+                     </li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

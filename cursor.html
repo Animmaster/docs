@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Custom cursor</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247398"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247398">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-cursordoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Custom Cursor
+               <span class="doc-hero__title-sub">Animated cursor with hover states and optional shadow</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This component replaces the native browser cursor with a customizable animated cursor.
+               It tracks mouse movement, detects interactive elements, and reacts with hover and click states.
+               An optional shadow cursor can be enabled for additional visual depth.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="about" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">What the cursor component does</h2>
+
+                  <p class="doc-p">
+                     When the page contains the attribute <code>data-anim-cursor</code>,
+                     the module automatically injects a custom cursor element and replaces
+                     the default browser cursor.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        Hides the native browser cursor.
+                     </li>
+
+                     <li class="doc-list__item">
+                        Creates a custom pointer element that follows the mouse.
+                     </li>
+
+                     <li class="doc-list__item">
+                        Detects interactive elements such as <code>buttons</code>, <code>links</code>, and inputs.
+                     </li>
+
+                     <li class="doc-list__item">
+                        Applies hover and active states automatically.
+                     </li>
+
+                     <li class="doc-list__item">
+                        Optionally adds a delayed shadow cursor.
+                     </li>
+
+                     <li class="doc-list__item">
+                        Automatically disables itself on mobile devices.
+                     </li>
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Files location</div>
+
+                     <div class="doc-callout__text">
+                        HTML / SCSS / JS files live in:
+                        <code>src/components/ui/cursor/</code>
+                     </div>
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Enable cursor -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="enable" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Enable the custom cursor</h2>
+
+                  <p class="doc-p">
+                     To enable the cursor, add the required attribute
+                     <code>data-anim-cursor</code> to the page wrapper.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable custom cursor</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;body data-anim-cursor&gt;
+   ...
+&lt;/body&gt;</code></pre>
+
+                  </div>
+
+                  <p class="doc-p">
+                     When the page loads, the cursor module will automatically initialize
+                     and inject the cursor elements into the DOM.
+                  </p>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Optional shadow -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="shadow" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Enable the shadow cursor</h2>
+
+                  <p class="doc-p">
+                     You can optionally enable an animated shadow cursor for additional visual depth.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable cursor shadow</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;body data-anim-cursor data-anim-cursor-shadow&gt;
+   ...
+&lt;/body&gt;</code></pre>
+
+                  </div>
+
+                  <p class="doc-p">
+                     When enabled, the cursor module will automatically create an additional
+                     shadow element that follows the main cursor with a slight delay.
+                  </p>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Generated DOM -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="dom" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Generated DOM structure</h2>
+
+                  <p class="doc-p">
+                     After initialization, the cursor module injects the following structure into the page:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Generated cursor elements</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div class="anim-cursor"&gt;
+   &lt;span class="anim-cursor__pointer"&gt;&lt;/span&gt;
+   &lt;span class="anim-cursor__shadow"&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Cursor states -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="states" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Cursor states</h2>
+
+                  <p class="doc-p">
+                     The cursor automatically switches between states depending on user interaction.
+                  </p>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <code>--hover</code> — activated when hovering interactive elements
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>--active</code> — activated when the mouse button is pressed
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout">
+
+                     <div class="doc-callout__title">Interactive elements detection</div>
+
+                     <div class="doc-callout__text">
+                        Hover state is triggered automatically when the cursor is over
+                        <code>a</code>, <code>button</code>, <code>input</code>,
+                        or any element that has a custom cursor style applied.
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Mobile behavior -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="mobile" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Mobile behavior</h2>
+
+                  <p class="doc-p">
+                     The custom cursor module automatically disables itself on mobile devices.
+                     This prevents unnecessary DOM updates and improves performance on touch devices.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+
+                     <div class="doc-callout__title">Mobile detection</div>
+
+                     <div class="doc-callout__text">
+                        Device detection uses the utility function
+                        <code>isMobile.any()</code> from the core utilities.
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Want a ready-to-use animated cursor system with hover detection,
+                     shadow cursor support, and mobile-safe behavior?
+                     Download the template and build faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/watcherdoc.html">
+                     Next: Component: Watcher
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc" aria-label="On this page">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">On this page</div>
+
+                  <ol class="doc-toc__list">
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#about">
+                           Overview
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#enable">
+                           Enable cursor
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#shadow">
+                           Shadow cursor
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#dom">
+                           DOM structure
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#states">
+                           Cursor states
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#mobile">
+                           Mobile behavior
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">
+                           Download
+                        </a>
+                     </li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

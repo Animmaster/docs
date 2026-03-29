@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title> Component: Quantity</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247392"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247392">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-quantitydoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Quantity
+               <span class="doc-hero__title-sub">
+                  Input control with plus / minus buttons
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Quantity module provides a simple and lightweight way
+               to control numeric values using increment and decrement buttons.
+               It includes validation, min/max limits, and manual input support.
+            </p>
+
+            <div class="doc-actions">
+
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="overview" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Overview</h2>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Plus / minus buttons
+                     </li>
+
+                     <li class="doc-list__item">
+                        Min / max value limits
+                     </li>
+
+                     <li class="doc-list__item">
+                        Manual input support
+                     </li>
+
+                     <li class="doc-list__item">
+                        Input validation (numbers only)
+                     </li>
+
+                     <li class="doc-list__item">
+                        Lightweight and dependency-free
+                     </li>
+
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Use a wrapper with buttons and an input field inside.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">HTML structure</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div class="quantity" data-anim-quantity&gt;
+
+   &lt;button
+      data-anim-quantity-minus
+      type="button"
+   &gt;&lt;/button&gt;
+
+   &lt;div class="quantity__input"&gt;
+
+      &lt;input
+         data-anim-quantity-value
+         type="text"
+         value="1"
+      &gt;
+
+   &lt;/div&gt;
+
+   &lt;button
+      data-anim-quantity-plus
+      type="button"
+   &gt;&lt;/button&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Attributes -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="attributes" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Attributes</h2>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <code>data-anim-quantity</code> — wrapper
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-quantity-value</code> — input field
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-quantity-plus</code> — increase value
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-quantity-minus</code> — decrease value
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-quantity-min="1"</code> — minimum value
+                     </li>
+
+                     <li class="doc-list__item">
+                        <code>data-anim-quantity-max="10"</code> — maximum value
+                     </li>
+
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Example -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="example" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Example with limits</h2>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Min / Max example</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;input
+   data-anim-quantity-value
+   value="1"
+   data-anim-quantity-min="1"
+   data-anim-quantity-max="10"
+&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Behavior -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="behavior" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Behavior</h2>
+
+                  <ol class="doc-list">
+
+                     <li class="doc-list__item">
+                        Click "+" increases value
+                     </li>
+
+                     <li class="doc-list__item">
+                        Click "−" decreases value
+                     </li>
+
+                     <li class="doc-list__item">
+                        Value is limited by min / max
+                     </li>
+
+                     <li class="doc-list__item">
+                        Only numeric input is allowed
+                     </li>
+
+                     <li class="doc-list__item">
+                        Empty or invalid input resets to 1
+                     </li>
+
+                  </ol>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Use the Quantity component for product pages,
+                     forms, carts, and anywhere numeric input control is required.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/radiodoc.html">
+
+                     Next: Radio
+
+                     <span class="doc-next__arrow">
+                        →
+                     </span>
+
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">
+                     On this page
+                  </div>
+
+                  <ol class="doc-toc__list">
+
+                     <li><a data-anim-scrollto="#overview">Overview</a></li>
+                     <li><a data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a data-anim-scrollto="#attributes">Attributes</a></li>
+                     <li><a data-anim-scrollto="#example">Example</a></li>
+                     <li><a data-anim-scrollto="#behavior">Behavior</a></li>
+                     <li><a data-anim-scrollto="#download">Download</a></li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

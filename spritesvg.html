@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>SVG sprite</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247389"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247389">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-svgspritedoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               SVG Sprite workflow
+               <span class="doc-hero__title-sub">Generate and use the SVG spritemap </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               In <strong>Animmaster Vite Template</strong>  you can generate an <strong>SVG sprite</strong>
+               automatically and use icons in HTML and SCSS without manual sprite assembly.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Enable SVG sprite -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="enable" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Enable SVG sprite generation</h2>
+
+                  <p class="doc-p">
+                     To generate an SVG sprite, enable the option in <code>template.config.js</code>:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">template.config.js</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">images: {
+  svgsprite: true
+}</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     Then place your SVG icons into:
+                     <code>src/assets/svgicons</code>
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Next step</div>
+                     <div class="doc-callout__text">
+                        Run dev mode: <code>npm run dev</code> — the spritemap will be generated automatically.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) HTML usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="html" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Use sprite icons in HTML</h2>
+
+                  <p class="doc-p">
+                     In dev mode, you can output an icon from the spritemap in two common ways.
+                  </p>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">1) Using <code>&lt;use&gt;</code></h3>
+                        <p class="doc-p">
+                           Recommended for inline SVG styling (fill, stroke, hover effects, etc.).
+                           (You can use the snippet <code>usvg</code> if you have it.)
+                        </p>
+
+                        <div class="codeblock" data-codeblock="">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">HTML — &lt;use&gt;</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;svg&gt;
+  &lt;use xlink:href="__spritemap#sprite-fb_icon"&gt;&lt;/use&gt;
+&lt;/svg&gt;</code></pre>
+                        </div>
+
+                        <p class="doc-p">
+                           Here <code>fb_icon</code> is the SVG file name (without extension).
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">2) Using <code>&lt;img&gt;</code></h3>
+                        <p class="doc-p">
+                           Useful when you want a simple image output.
+                           (You can use the snippet <code>usvgi</code> if you have it.)
+                        </p>
+
+                        <div class="codeblock" data-codeblock="">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">HTML — &lt;img&gt;</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">&lt;img src="__spritemap#sprite-fb_icon-view" alt="Image"&gt;</code></pre>
+                        </div>
+
+                        <div class="doc-callout">
+                           <div class="doc-callout__title">Notice</div>
+                           <div class="doc-callout__text">
+                              When using <code>&lt;img&gt;</code>, the icon name has the <code>-view</code> suffix:
+                              <code>fb_icon-view</code>.
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) SCSS usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="scss" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Use sprite icons in SCSS</h2>
+
+                  <p class="doc-p">
+                     To output a sprite icon in SCSS, use the dedicated mixin:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">SCSS</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">@include sprite("fb_icon");</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     Where <code>fb_icon</code> is the SVG file name. As a result, the mixin outputs a
+                     <code>background</code> property with the icon URL, centered and without repeat.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Quick checklist -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="checklist" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Quick checklist</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Enable sprite: <code>images.svgsprite: true</code></li>
+                     <li class="doc-list__item">Put icons into: <code>src/assets/svgicons</code></li>
+                     <li class="doc-list__item">Run: <code>npm run dev</code></li>
+                     <li class="doc-list__item">HTML: <code>__spritemap#sprite-icon</code> or <code>...-view</code></li>
+                     <li class="doc-list__item">SCSS: <code>@include sprite("icon")</code></li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Want the whole workflow — SVG sprite generation, optimization pipelines, and component structure —
+                     already built in? Download the template and start faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/workpug.html">
+                     Next: PUG
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#enable">Enable</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#html">HTML
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#scss">SCSS
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#checklist">Checklist</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

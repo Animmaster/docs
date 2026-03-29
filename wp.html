@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>WordPress workflow</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247388"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247388">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-wpdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               WordPress workflow
+               <span class="doc-hero__title-sub">Fullstack development with Docker</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               <strong>Animmaster Vite Template</strong>  includes a ready-to-run fullstack mode for building
+               interfaces directly on top of <strong>CMS WordPress</strong>.
+               The build starts a local server via <strong>Docker</strong>, so you can develop and test the theme
+               in a real WP environment.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+        
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Requirements -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="requirements" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What you need</h2>
+
+                  <p class="doc-p">
+                     To run a full local WordPress server on your machine, you need <strong>Docker</strong>.
+                     Docker is free for personal use. After installation, just keep Docker turned on — you don’t
+                     need to configure anything manually for the template.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        Docker must be running <strong>before</strong> you use any WordPress commands
+                        (<code>npm run wp</code>, <code>npm run wpbuild</code>).
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Start WP mode -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="start" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Start WordPress mode</h2>
+
+                  <p class="doc-p">
+                     After installing Animmaster Vite Template and Docker, start the WordPress environment with:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm run wp</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     On the first run, the system will create a <code>backend/</code> folder in your project root.
+                     It contains:
+                     <code>database/</code> (DB data) and <code>wordpress/</code> (WP core).
+                  </p>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Do not edit</div>
+                     <div class="doc-callout__text">
+                        Do not edit <code>backend/</code> or its contents unless you clearly understand what you’re
+                        doing.
+                     </div>
+                  </div>
+
+                  <p class="doc-p">
+                     Then the browser opens <code>http://localhost:8080/</code>.
+                     If it’s your first run, WordPress will show the installation screen.
+                     After WP is installed, the environment is ready for development.
+                  </p>
+
+                  <p class="doc-p">
+                     If you already ran WP mode before, <code>npm run wp</code> will open
+                     <code>http://localhost:8080/</code> directly (your site homepage).
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Where to develop -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="where-to-work" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Where to develop</h2>
+
+                  <p class="doc-p">
+                     For WordPress development, go to:
+                     <code>src/components/wordpress/</code>
+                  </p>
+
+                  <div class="doc-tree">
+                     <ul class="doc-tree__list">
+                        <li>
+                           <code>src/components/wordpress/anim-theme/</code> — the installed WordPress theme.
+                           This is where you edit theme files for your tasks.
+                        </li>
+                        <li>
+                           <code>src/components/wordpress/anim-plugin/</code> — a folder to create your own custom
+                           plugin.
+                        </li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Editing styles</div>
+                     <div class="doc-callout__text">
+                        General styles are edited in <code>src/styles/</code> and inside relevant components in
+                        <code>src/components/</code>.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Scripts in WP mode -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="scripts" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Scripts in WordPress mode</h2>
+
+                  <p class="doc-p">
+                     In dev mode, scripts are edited inside components (<code>src/components</code>) and, if you need
+                     global WP theme logic, here:
+                     <code>src/components/wordpress/anim-theme/assets/app.js</code>
+                  </p>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Don’t remove this import</div>
+                     <div class="doc-callout__text">
+                        In <code>src/components/wordpress/anim-theme/assets/app.js</code> do not delete:
+                        <code>import '../anim-wp-includes.js'</code>.
+                        It’s required for correct WP integration.
+                     </div>
+                  </div>
+
+                  <p class="doc-p">
+                     After the build, the file <code>assets/app.js</code> is no longer used directly.
+                     Final JS/CSS is compiled into:
+                     <code>src/components/wordpress/anim-theme/build/assets</code>
+                  </p>
+
+                  <p class="doc-p">
+                     After a build you can also apply quick manual edits directly in the WordPress theme output:
+                     <code>/wp-content/themes/anim-theme/build/assets/css/custom.css</code> and
+                     <code>/wp-content/themes/anim-theme/build/assets/js/custom.js</code>
+                  </p>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Keep core WP scripts safe</div>
+                     <div class="doc-callout__text">
+                        Do not edit other JS files inside <code>src/components/wordpress</code> unless you understand
+                        them.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Images outside WP admin -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="images" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Images outside the WP admin panel</h2>
+
+                  <p class="doc-p">
+                     If you need to use static images from <code>src/assets/img</code> directly in code
+                     (not via the WP media library), reference them via the theme path.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Examples: CSS + PHP</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+// In styles
+.some {
+  background: url('/wp-content/themes/anim-theme/assets/img/image.jpg') 0 0 no-repeat;
+}
+
+// In PHP templates
+&lt;img src="/wp-content/themes/anim-theme/assets/img/image.jpg" alt="Image"&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Build for WP -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="build" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Build the project for WordPress</h2>
+
+                  <p class="doc-p">
+                     When you finish development, run:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm run wpbuild</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     During <code>npm run wpbuild</code>, SCSS and JS are processed and placed into:
+                     <code>src/components/wordpress/anim-theme/build/assets</code>.
+                     Local fonts and static images (used outside the WP admin) are also included there.
+                  </p>
+
+                  <p class="doc-p">
+                     To migrate the site to a remote server, install a WordPress migration plugin (choose one yourself),
+                     then create an export/dump of the site and database and deploy it to your hosting.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 7) Stop Docker -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="stop" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Stop the Docker server</h2>
+
+                  <p class="doc-p">
+                     Because <code>wp</code> / <code>wpbuild</code> starts a Docker server, you should stop it during
+                     breaks
+                     or after finishing work:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Terminal</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">npm run wpstop</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        If WP doesn’t open or commands fail — first check that Docker is running.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Want a ready WordPress workflow with Docker, theme structure, and a predictable build pipeline?
+                     Download Animmaster Vite Template and start faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/spritesvg.html">
+                     Next: SVG Sprite workflow
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#requirements">Requirements</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#start">Start
+                           WP mode</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#where-to-work">Where to develop</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#scripts">Scripts</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#images">Images</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#build">Build
+                           for WP</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#stop">Stop
+                           Docker</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

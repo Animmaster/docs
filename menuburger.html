@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Adaptive Menu (Burger)</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247395"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247395">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-menudoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Adaptive Menu (Burger)
+               <span class="doc-hero__title-sub">Mobile navigation with scroll lock</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Adaptive Menu component handles mobile navigation using a classic “burger” button.
+               It reacts to user clicks, toggles global state on the <code>&lt;html&gt;</code> tag,
+               and safely locks page scrolling while the menu is open.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+   
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) How it works -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="how" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">How the adaptive menu works</h2>
+
+                  <p class="doc-p">
+                     The menu listens for clicks on a button marked with the attribute
+                     <code>data-anim-menu</code>.
+                     When the button is clicked:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        The attribute <code>data-anim-menu-open</code> is added to the
+                        <code>&lt;html&gt;</code> tag.
+                     </li>
+                     <li class="doc-list__item">
+                        Page scrolling is locked to prevent background scrolling.
+                     </li>
+                     <li class="doc-list__item">
+                        The burger icon animates into its “open” state.
+                     </li>
+                  </ul>
+
+                  <p class="doc-p">
+                     When the button is clicked again, all actions are reversed:
+                     the attribute is removed, scrolling is unlocked, and the menu closes.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Automatic behavior</div>
+                     <div class="doc-callout__text">
+                        You don’t need to write any JavaScript manually — the component connects itself
+                        as soon as the required attribute is present in HTML.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Usage</h2>
+
+                  <p class="doc-p">
+                     You can create the menu structure manually or use the ready-made component markup.
+                     The only strict requirement is that the menu button must have
+                     <code>data-anim-menu</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Menu HTML structure</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div class="menu"&gt;
+	&lt;button
+		type="button"
+		data-anim-menu
+		class="menu__icon icon-menu"
+	&gt;
+		&lt;span&gt;&lt;/span&gt;
+	&lt;/button&gt;
+
+	&lt;nav class="menu__body"&gt;
+		&lt;ul class="menu__list"&gt;
+			&lt;li class="menu__item"&gt;
+				&lt;a href="#" class="menu__link"&gt;Home&lt;/a&gt;
+			&lt;/li&gt;
+			...
+		&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Important</div>
+                     <div class="doc-callout__text">
+                        The button that opens the menu must contain the
+                        <code>data-anim-menu</code> attribute — without it, the component will not activate.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Using component include -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="include" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Using the built-in component</h2>
+
+                  <p class="doc-p">
+                     If you don’t want to write the markup manually, you can include the ready-made
+                     menu HTML directly from the component folder.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Include example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;include src="@components/layout/menu/menu.html"&gt;&lt;/include&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     This file already contains valid HTML structure and base classes.
+                     You can extend or override styles as needed in your project.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Styles & animation -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="styles" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Styles and animation</h2>
+
+                  <p class="doc-p">
+                     The component ships with base styles for:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Burger icon layout (<code>.icon-menu</code>)</li>
+                     <li class="doc-list__item">Open / close animation</li>
+                     <li class="doc-list__item">Menu body visibility and transitions</li>
+                  </ul>
+
+                  <p class="doc-p">
+                     All HTML and base SCSS files are located in:
+                     <code>src/components/layout/menu/</code>
+                  </p>
+
+                  <div class="doc-callout doc-callout--warn">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        You can safely customize animations and layout styles, but keep the core
+                        class names and data attributes intact for correct JS behavior.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Use a production-ready adaptive menu with built-in scroll lock and smooth animations.
+                     Download the template and save hours of setup time.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="#" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/popup.html">
+                     Next: Modal window (popup)
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#how">How it
+                           works</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#include">Include</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#styles">Styles</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

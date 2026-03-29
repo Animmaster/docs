@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Work with img</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247391"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247391">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-imagesdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Working with images
+               <span class="doc-hero__title-sub">Optimization, modern formats, sizes &amp; DPI variants</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The template automates the most common image tasks:
+               compression for JPEG/PNG/GIF, conversion to <code>WEBP</code>/<code>AVIF</code>,
+               generating multiple sizes for responsive images, and building <code>2x/3x</code> variants for high-DPI
+               screens.
+               All controls live in <code>template.config.js</code> inside <code>images → optimize</code>.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+   
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="overview" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What the build can do</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Optimize (reduce size) for <code>JPEG/JPG</code>, <code>PNG</code>,
+                        <code>GIF</code>.</li>
+                     <li class="doc-list__item">Convert images to modern formats: <code>WEBP</code> / <code>AVIF</code>.
+                     </li>
+                     <li class="doc-list__item">Generate smaller versions for different screen widths (responsive
+                        images).</li>
+                     <li class="doc-list__item">Generate bigger versions for high pixel density screens
+                        (<code>DPI</code> / <code>2x</code>, <code>3x</code>).</li>
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Where to control it</div>
+                     <div class="doc-callout__text">
+                        Open <code>template.config.js</code> → go to <code>images → optimize</code> and adjust options.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Main switch -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="enable" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Enable / disable optimization</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>images → optimize → enable</code></h3>
+                     <p class="doc-p">
+                        Master switch for image optimization. If you plan to integrate with a backend that has its own
+                        image pipeline, you may want to disable the template-side processing.
+                     </p>
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>true</code> — images are processed (convert/resize/optimize
+                           based on your config).</li>
+                        <li class="doc-list__item"><code>false</code> — images are copied “as is” (no conversion, no
+                           compression).</li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) HTML rewriting -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="edithtml" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">HTML rewriting</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>images → optimize → edithtml</code></h3>
+                     <p class="doc-p">
+                        Controls whether the build modifies HTML automatically (injecting <code>&lt;picture&gt;</code>,
+                        replacing file extensions after conversion, adding sources for sizes/DPI, etc.).
+                     </p>
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>true</code> — HTML is updated to match generated images.</li>
+                        <li class="doc-list__item"><code>false</code> — HTML stays unchanged (useful if you write your
+                           own <code>&lt;picture&gt;</code> markup).</li>
+                     </ul>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        If you already have custom <code>&lt;picture&gt;</code> markup, either disable
+                        <code>edithtml</code>
+                        or use the ignore attribute described below.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Responsive sizes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="sizes" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Responsive sizes</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>images → optimize → sizes</code></h3>
+                     <p class="doc-p">
+                        Set the widths (in pixels) that should be generated for responsive output.
+                        Example: <code>[600, 1200]</code>.
+                     </p>
+                  </div>
+
+                  <p class="doc-p">
+                     In dev you can write a simple image tag:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Dev markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;img src="@img/cover.jpg" alt="Image"&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     After production build, it can be transformed into a <code>&lt;picture&gt;</code> with sources:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Build output example (sizes = [600, 1200])</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;picture&gt;
+  &lt;source media="(max-width: 600px)" srcset="./assets/img/cover-600.webp" type="image/webp"&gt;
+  &lt;source media="(max-width: 1200px)" srcset="./assets/img/cover-1200.webp" type="image/webp"&gt;
+  &lt;img alt="Image" src="./assets/img/cover.webp"&gt;
+&lt;/picture&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Per-image custom sizes</div>
+                     <div class="doc-callout__text">
+                        You can override global sizes for one specific image using
+                        <code>data-anim-image-sizes="1000, 600"</code>.
+                     </div>
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Per-image override</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;img data-anim-image-sizes="1000, 600" src="..." alt="..."&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) DPI -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="dpi" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">High-DPI variants (2x, 3x)</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>images → optimize → dpi</code></h3>
+                     <p class="doc-p">
+                        Set DPI multipliers for screens with high pixel density.
+                        Example: <code>[2, 3]</code> to generate <code>2x</code> and <code>3x</code> versions.
+                     </p>
+                  </div>
+
+                  <p class="doc-p">
+                     Example output when sizes are enabled and DPI is <code>[2, 3]</code>:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Build output example (sizes + dpi)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;picture&gt;
+  &lt;source
+    media="(max-width: 600px)"
+    srcset="
+      ./assets/img/cover-600.webp 1x,
+      ./assets/img/cover-600-2x.webp 2x,
+      ./assets/img/cover-600-3x.webp 3x"
+    type="image/webp"&gt;
+
+  &lt;source
+    media="(max-width: 1200px)"
+    srcset="
+      ./assets/img/cover-1200.webp 1x,
+      ./assets/img/cover-1200-2x.webp 2x,
+      ./assets/img/cover-1200-3x.webp 3x"
+    type="image/webp"&gt;
+
+  &lt;img
+    alt="Image"
+    src="./assets/img/cover.webp"
+    srcset="
+      ./assets/img/cover.webp 1x,
+      ./assets/img/cover-2x.webp 2x,
+      ./assets/img/cover-3x.webp 3x"&gt;
+&lt;/picture&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Disable DPI generation</div>
+                     <div class="doc-callout__text">
+                        If you don’t want DPI variants, leave the array empty: <code>[]</code>.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Ignore attributes -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="ignore" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Ignore image processing</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>images → optimize → attrignore</code></h3>
+                     <p class="doc-p">
+                        Set the name of an attribute. If an <code>&lt;img&gt;</code> tag contains this attribute,
+                        the image processing for that tag is skipped.
+                     </p>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">When it’s useful</div>
+                     <div class="doc-callout__text">
+                        If you use your own <code>&lt;picture&gt;</code> in dev mode, you can mark the inner
+                        <code>&lt;img&gt;</code>
+                        to avoid automatic overrides, or disable global <code>sizes</code>.
+                     </div>
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example ignore attribute on img</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;img data-anim-image-sizes-ignore src="..." alt="..."&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 7) Modern formats -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="modern" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Modern formats: WEBP / AVIF</h2>
+
+                  <div class="doc-card doc-card--inline">
+                     <h3 class="doc-h3"><code>images → modernformat</code></h3>
+                     <p class="doc-p">
+                        Controls conversion to <code>WEBP</code> or <code>AVIF</code>.
+                        This can massively reduce image weight.
+                     </p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item"><code>enable</code> — enable conversion (<code>true/false</code>).
+                        </li>
+                        <li class="doc-list__item"><code>type</code> — <code>webp</code> or <code>avif</code>.</li>
+                        <li class="doc-list__item"><code>only</code> — if <code>true</code>, original files are removed;
+                           if <code>false</code>, originals can stay as fallbacks.</li>
+                        <li class="doc-list__item"><code>quality</code> — 0–100 (higher = better quality, bigger file).
+                        </li>
+                     </ul>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 8) JPEG / PNG quality -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="quality" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">JPEG / PNG optimization quality</h2>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>images → jpeg → quality</code></h3>
+                        <p class="doc-p">
+                           Controls compression quality for JPEG images (0–100).
+                           Higher means better quality but larger file size.
+                        </p>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3"><code>images → png → quality</code></h3>
+                        <p class="doc-p">
+                           Controls optimization quality for PNG images (0–100).
+                           Higher means better quality but larger file size.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Practical advice</div>
+                     <div class="doc-callout__text">
+                        Start with a “balanced” quality value and adjust after you check the visual result in your real
+                        pages.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 9) Quick config snippet -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="snippet" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Quick config checklist</h2>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">template.config.js (images)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+images: {
+  svgsprite: true,
+  optimize: {
+    enable: true,
+    edithtml: true,
+    sizes: [600, 1200],
+    dpi: [2, 3],
+    attrignore: "data-anim-image-sizes-ignore"
+  },
+  modernformat: {
+    enable: true,
+    type: "webp",
+    only: false,
+    quality: 80
+  },
+  jpeg: { quality: 80 },
+  png: { quality: 85 }
+}</code></pre>
+                  </div>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Remember</div>
+                     <div class="doc-callout__text">
+                        If optimization is disabled, images are copied without changes.
+                        If WordPress mode is enabled, this image optimization workflow is not applied.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Modern image formats and responsive sizes are one of the fastest wins for performance.
+                     Configure it once — and the template handles the routine work for every image in your project.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/navpanel.html">
+                     Next: Developer navigation panel
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#overview">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#enable">Enable</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#edithtml">HTML
+                           rewrite</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#sizes">Sizes</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#dpi">DPI</a>
+                     </li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#ignore">Ignore</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#modern">WEBP/AVIF</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#quality">Quality</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#snippet">Config snippet</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Split type</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247390"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247390">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-splittype-doc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: SplitType
+               <span class="doc-hero__title-sub">
+                  Advanced text splitting for animation systems
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The SplitType module automatically splits text into
+               <strong>lines</strong>, <strong>words</strong> and
+               <strong>characters</strong>.
+               This allows you to create advanced animations such as
+               staggered reveals, scroll animations, or character-based effects
+               using animation libraries like GSAP.
+            </p>
+
+            <div class="doc-actions">
+
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Dependency -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="dependency" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Dependency</h2>
+
+                  <p class="doc-p">
+                     This module uses the
+                     <strong>SplitType</strong> library.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Install SplitType
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+npm install split-type
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Add the attribute
+                     <code>data-anim-splittype</code>
+                     to any text element you want to animate.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Basic example
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;p data-anim-splittype&gt;
+	Lorem ipsum dolor sit amet consectetur adipisicing elit
+&lt;/p&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Generated structure -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="structure" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Generated structure</h2>
+
+                  <p class="doc-p">
+                     After initialization, the text is automatically wrapped
+                     into elements representing lines, words and characters.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">
+                           Generated HTML structure
+                        </div>
+
+                        <button class="codeblock__copy" type="button" data-copy="">
+                           Copy
+                        </button>
+
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div class="line"&gt;
+
+   &lt;span class="word"&gt;
+
+      &lt;span class="char"&gt;H&lt;/span&gt;
+      &lt;span class="char"&gt;e&lt;/span&gt;
+      &lt;span class="char"&gt;l&lt;/span&gt;
+      &lt;span class="char"&gt;l&lt;/span&gt;
+      &lt;span class="char"&gt;o&lt;/span&gt;
+
+   &lt;/span&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Generated classes -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="classes" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Generated classes</h2>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        <strong>.line</strong> — container for a text line
+                     </li>
+
+                     <li class="doc-list__item">
+                        <strong>.word</strong> — container for a word
+                     </li>
+
+                     <li class="doc-list__item">
+                        <strong>.char</strong> — container for a character
+                     </li>
+
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Use cases -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="usecases" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Common use cases</h2>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        GSAP stagger animations
+                     </li>
+
+                     <li class="doc-list__item">
+                        Scroll triggered text reveals
+                     </li>
+
+                     <li class="doc-list__item">
+                        Character-based text effects
+                     </li>
+
+                     <li class="doc-list__item">
+                        Advanced typography animations
+                     </li>
+
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+
+                     <div class="doc-callout__title">
+                        Animation tip
+                     </div>
+
+                     <div class="doc-callout__text">
+                        Combine SplitType with GSAP stagger animations
+                        for powerful text reveal effects.
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">
+                     Download
+                  </h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Use SplitType to create modern text animations
+                     with minimal setup and full control over lines,
+                     words and characters.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/tippydoc.html">
+
+                     Next: Tippy
+
+                     <span class="doc-next__arrow">
+                        →
+                     </span>
+
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc" aria-label="On this page">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">
+                     On this page
+                  </div>
+
+                  <ol class="doc-toc__list">
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#dependency">
+                           Dependency
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#usage">
+                           Basic usage
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#structure">
+                           Generated structure
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#classes">
+                           Generated classes
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#usecases">
+                           Use cases
+                        </a>
+                     </li>
+
+                     <li>
+                        <a class="doc-toc__link" data-anim-scrollto="#download">
+                           Download
+                        </a>
+                     </li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

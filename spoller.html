@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Spollers deployment</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247391"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247391">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-spollersdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Spollers
+               <span class="doc-hero__title-sub">Accordion-style content reveal with breakpoints, animations, and
+                  helpers</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               A <strong>spoller</strong> is a title that раскрывает / hides content below it when clicked.
+               This component supports multiple blocks, responsive enable/disable, “accordion” mode, and more.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+      
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Main features</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Use multiple spoller blocks on the same page</li>
+                     <li class="doc-list__item">Enable/disable by screen width (breakpoint)</li>
+                     <li class="doc-list__item">Accordion mode (only one item open at a time)</li>
+                     <li class="doc-list__item">Close on click outside the spoller</li>
+                     <li class="doc-list__item">Animated open/close</li>
+                     <li class="doc-list__item">Semantic markup & accessibility via <code>&lt;details&gt;</code> /
+                        <code>&lt;summary&gt;</code></li>
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Note</div>
+                     <div class="doc-callout__text">
+                        The component initializes automatically when it detects <code>data-anim-spollers</code> in
+                        markup.
+                        When initialized, the wrapper gets the class <code>--spoller-init</code>.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Files are located in <code>src/components/layout/spollers</code>.
+                     Inside you’ll find JS, an HTML example, and SCSS styles for the component.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Create a wrapper with <code>data-anim-spollers</code>, then use <code>&lt;details&gt;</code> items.
+                     Adding <code>data-anim-spollers-open</code> to a <code>&lt;details&gt;</code> makes it open by
+                     default.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Spollers block (2 items)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-spollers class="spollers"&gt;
+
+	&lt;details class="spollers__item" data-anim-spollers-open&gt;
+		&lt;summary class="spollers__title"&gt;Spoller title #1&lt;/summary&gt;
+		&lt;div class="spollers__body"&gt;Spoller content #1&lt;/div&gt;
+	&lt;/details&gt;
+
+	&lt;details class="spollers__item"&gt;
+		&lt;summary class="spollers__title"&gt;Spoller title #2&lt;/summary&gt;
+		&lt;div class="spollers__body"&gt;Spoller content #2&lt;/div&gt;
+	&lt;/details&gt;
+
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Init class</div>
+                     <div class="doc-callout__text">
+                        After initialization, the wrapper receives <code>--spoller-init</code>.
+                        You can use it in CSS to style the active/interactive state.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Breakpoint enable/disable -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="breakpoint" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Enable/disable on breakpoint</h2>
+
+                  <p class="doc-p">
+                     To control when spollers are active, set a value on <code>data-anim-spollers</code>:
+                     <code>width,type</code>. The type can be:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item"><code>max</code> (default) — enabled below the given width</li>
+                     <li class="doc-list__item"><code>min</code> — enabled above the given width</li>
+                  </ul>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable only on width ≥ 768px</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-spollers="768,min" class="spollers"&gt;
+	...
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Accordion mode -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="one" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Accordion mode (one open at a time)</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-spollers-one</code> to allow only one opened item inside the block.
+                     Opening a new spoller will close the previously opened one.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Accordion mode</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-spollers data-anim-spollers-one class="spollers"&gt;
+	...
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Animation speed -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="speed" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Animation speed</h2>
+
+                  <p class="doc-p">
+                     To change open/close animation duration, use <code>data-anim-spollers-speed</code> on the wrapper.
+                     Value is milliseconds (default: <code>500</code>).
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">1s animation</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-spollers data-anim-spollers-speed="1000" class="spollers"&gt;
+	...
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 7) Close on outside click -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="close" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Close on click outside</h2>
+
+                  <p class="doc-p">
+                     If you want a spoller to close when the user clicks outside the spoller block,
+                     add <code>data-anim-spollers-close</code> to the corresponding <code>&lt;summary&gt;</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Close by outside click</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-spollers class="spollers"&gt;
+	&lt;details class="spollers__item"&gt;
+		&lt;summary data-anim-spollers-close class="spollers__title"&gt;Spoller title&lt;/summary&gt;
+		&lt;div class="spollers__body"&gt;Spoller content&lt;/div&gt;
+	&lt;/details&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 8) Scroll to opened title -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="scroll" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Scroll to opened title</h2>
+
+                  <p class="doc-p">
+                     If you need the page to scroll to the title of the opened spoller, add
+                     <code>data-anim-spollers-scroll</code> to the <code>&lt;details&gt;</code>.
+                     Optionally, provide a numeric offset (px) as the attribute value.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Scroll to title (basic)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-spollers class="spollers"&gt;
+	&lt;details data-anim-spollers-scroll class="spollers__item"&gt;
+		&lt;summary class="spollers__title"&gt;Spoller title&lt;/summary&gt;
+		&lt;div class="spollers__body"&gt;Spoller content&lt;/div&gt;
+	&lt;/details&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     If your header is fixed and you want to compensate its height, add
+                     <code>data-anim-spollers-scroll-noheader</code>.
+                     You can also set an extra offset value:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Scroll to title (offset + ignore header)</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-spollers class="spollers"&gt;
+	&lt;details
+		data-anim-spollers-scroll="20"
+		data-anim-spollers-scroll-noheader
+		class="spollers__item"&gt;
+
+		&lt;summary class="spollers__title"&gt;Spoller title&lt;/summary&gt;
+		&lt;div class="spollers__body"&gt;Spoller content&lt;/div&gt;
+
+	&lt;/details&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build clean FAQ blocks, mobile accordions, and content toggles with the Spollers component.
+                     Download the template and ship faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+              
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/beforeater.html">
+                     Next: before / after component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Basic
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#breakpoint">Breakpoint</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#one">Accordion</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#speed">Speed</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#close">Close
+                           outside</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#scroll">Scroll
+                           to title</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

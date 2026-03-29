@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title> Component: Range</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247391"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247391">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-rangedoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Range Slider
+               <span class="doc-hero__title-sub">
+                  Interactive value slider powered by noUiSlider
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Range module allows you to create interactive sliders
+               for selecting values such as price ranges, filters, or custom inputs.
+               It is powered by <strong>noUiSlider</strong> and supports full customization.
+            </p>
+
+            <div class="doc-actions">
+
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="overview" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Overview</h2>
+
+                  <ul class="doc-list">
+
+                     <li class="doc-list__item">
+                        Interactive range slider
+                     </li>
+
+                     <li class="doc-list__item">
+                        Powered by noUiSlider
+                     </li>
+
+                     <li class="doc-list__item">
+                        Supports single and double range
+                     </li>
+
+                     <li class="doc-list__item">
+                        Fully customizable
+                     </li>
+
+                     <li class="doc-list__item">
+                        Lightweight and flexible
+                     </li>
+
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Dependency -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="dependency" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Dependency</h2>
+
+                  <p class="doc-p">
+                     This component requires <strong>noUiSlider</strong>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Install</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+npm install nouislider
+</code></pre>
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Add a container with <code>data-anim-range</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">HTML</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div class="range" data-anim-range&gt;&lt;/div&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- JS config -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="config" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Configuration</h2>
+
+                  <p class="doc-p">
+                     Default slider configuration:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">JS config</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+noUiSlider.create(priceSlider, {
+   start: 0,
+   connect: [true, false],
+   range: {
+      min: [0],
+      max: [200000],
+   },
+})
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Double range -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="double" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Double range (min / max)</h2>
+
+                  <p class="doc-p">
+                     You can create a range with two handles:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Range with two values</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+noUiSlider.create(priceSlider, {
+   start: [1000, 50000],
+   connect: true,
+   range: {
+      min: 0,
+      max: 100000,
+   },
+})
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Styling -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="styling" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Styling</h2>
+
+                  <p class="doc-p">
+                     You can customize the slider appearance using CSS.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+.noUi-connect {
+   background: #ff3c3c;
+}
+
+.noUi-handle {
+   border-radius: 50%;
+}
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Behavior -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="behavior" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Behavior</h2>
+
+                  <ol class="doc-list">
+
+                     <li class="doc-list__item">
+                        Drag handle to change value
+                     </li>
+
+                     <li class="doc-list__item">
+                        Click on track to move handle
+                     </li>
+
+                     <li class="doc-list__item">
+                        Smooth animation
+                     </li>
+
+                     <li class="doc-list__item">
+                        Supports multiple handles
+                     </li>
+
+                  </ol>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Use Range Slider for filters, pricing UI,
+                     dashboards, and interactive controls.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+
+               <nav class="doc-next">
+
+                  <a class="doc-next__link" href="/docs/ratingdoc.html">
+
+                     Next: Rating
+
+                     <span class="doc-next__arrow">→</span>
+
+                  </a>
+
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">
+                     On this page
+                  </div>
+
+                  <ol class="doc-toc__list">
+
+                     <li><a data-anim-scrollto="#overview">Overview</a></li>
+                     <li><a data-anim-scrollto="#dependency">Dependency</a></li>
+                     <li><a data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a data-anim-scrollto="#config">Config</a></li>
+                     <li><a data-anim-scrollto="#double">Double range</a></li>
+                     <li><a data-anim-scrollto="#styling">Styling</a></li>
+                     <li><a data-anim-scrollto="#behavior">Behavior</a></li>
+                     <li><a data-anim-scrollto="#download">Download</a></li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

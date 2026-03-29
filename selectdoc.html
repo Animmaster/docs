@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Select</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247393"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247393">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-selectdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">
+               ← Back to Documentation
+            </a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Select
+               <span class="doc-hero__title-sub">
+                  Custom dropdown with animations and full control
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               The Select component replaces native select elements with a fully customizable,
+               animated dropdown. It preserves native behavior while providing better UX and styling control.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+
+               </a>
+            </div>
+
+         </div>
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- Overview -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="overview" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Overview</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Custom dropdown UI</li>
+                     <li class="doc-list__item">Animated open / close</li>
+                     <li class="doc-list__item">Native select support (forms)</li>
+                     <li class="doc-list__item">Keyboard & accessibility friendly</li>
+                     <li class="doc-list__item">Fully customizable</li>
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-select</code> to a native select element.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">HTML</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;select data-anim-select&gt;
+
+   &lt;option value="0" selected&gt;Select option&lt;/option&gt;
+   &lt;option value="1"&gt;Item 1&lt;/option&gt;
+   &lt;option value="2"&gt;Item 2&lt;/option&gt;
+
+&lt;/select&gt;
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- How it works -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="how" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">How it works</h2>
+
+                  <ol class="doc-list">
+                     <li class="doc-list__item">Native select is hidden</li>
+                     <li class="doc-list__item">Custom UI is generated</li>
+                     <li class="doc-list__item">Options are rendered dynamically</li>
+                     <li class="doc-list__item">Click updates value</li>
+                     <li class="doc-list__item">Native change event is preserved</li>
+                  </ol>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- States -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="states" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">States</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Default — closed</li>
+                     <li class="doc-list__item">Open — dropdown visible</li>
+                     <li class="doc-list__item">Selected — active option highlighted</li>
+                     <li class="doc-list__item">Disabled — interaction blocked</li>
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Customization -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="custom" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Customization</h2>
+
+                  <p class="doc-p">
+                     You can fully customize the component using CSS classes.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Example</div>
+                        <button class="codeblock__copy" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+.select__title {
+   background: #000;
+   color: #fff;
+}
+
+.select__option:hover {
+   background: #ff3c3c;
+}
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Disabled -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="disabled" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Disabled state</h2>
+
+                  <p class="doc-p">
+                     Use native <code>disabled</code> attribute.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;select data-anim-select disabled&gt;&lt;/select&gt;
+</code></pre>
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Behavior -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="behavior" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Behavior</h2>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">Click to open / close</li>
+                     <li class="doc-list__item">Click option to select</li>
+                     <li class="doc-list__item">Click outside closes dropdown</li>
+                     <li class="doc-list__item">Selected value updates UI</li>
+                  </ul>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Use Select component in forms, filters, dashboards,
+                     and anywhere dropdown interaction is required.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/chartdoc.html">
+                     Next: Chart
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc">
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">On this page</div>
+
+                  <ol class="doc-toc__list">
+                     <li><a data-anim-scrollto="#overview">Overview</a></li>
+                     <li><a data-anim-scrollto="#usage">Usage</a></li>
+                     <li><a data-anim-scrollto="#how">How it works</a></li>
+                     <li><a data-anim-scrollto="#states">States</a></li>
+                     <li><a data-anim-scrollto="#custom">Customization</a></li>
+                     <li><a data-anim-scrollto="#disabled">Disabled</a></li>
+                     <li><a data-anim-scrollto="#behavior">Behavior</a></li>
+                     <li><a data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+
+               </div>
+            </aside>
+
+         </div>
+
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

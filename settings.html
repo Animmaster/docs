@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Settings</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247392"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247392">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-settingsdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+
+         <div class="doc-hero" id="top">
+
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Build settings
+               <span class="doc-hero__title-sub">
+                  Configure the template via <code>template.config.js</code>
+               </span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This page explains the main configuration options available inside
+               <code>template.config.js</code>.
+               The file acts as the control panel of the build system and allows
+               you to customize development workflow, asset processing,
+               optimization pipelines, and optional modules.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Layout -->
+         <!-- ========================================================= -->
+
+         <div class="doc-layout">
+
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- WHERE -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="where" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Where to edit settings</h2>
+
+                  <p class="doc-p">
+                     All template configuration lives in
+                     <code>template.config.js</code> located in the project root.
+                     This file defines how the development server, build pipeline,
+                     asset processing and optional modules behave.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+
+                     <div class="doc-callout__title">Tip</div>
+
+                     <div class="doc-callout__text">
+                        Change one setting at a time and run
+                        <code>npm run dev</code> to verify the result.
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- QUICK -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="quick" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Quick reference</h2>
+
+                  <p class="doc-p">
+                     These are the main top-level configuration keys available
+                     in <code>template.config.js</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">template.config.js — main keys</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+lang
+vscode
+devcomponents
+newpage
+git
+navpanel
+statistics
+server
+html
+styles
+fonts
+video
+images
+js
+php
+pug
+ftp
+logger
+projectpage
+aliases
+coffee
+</code></pre>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- LANG -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="lang" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Default HTML language</h2>
+
+                  <div class="doc-card doc-card--inline">
+
+                     <h3 class="doc-h3"><code>lang</code></h3>
+
+                     <p class="doc-p">
+                        Defines the default language used in generated HTML pages.
+                        The value is automatically applied to the
+                        <code>&lt;html lang=""&gt;</code> attribute.
+                     </p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item">
+                           Example: <code>lang: "en"</code>
+                        </li>
+                     </ul>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- VSCODE -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="vscode" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Editor helpers</h2>
+
+                  <div class="doc-card doc-card--inline">
+
+                     <h3 class="doc-h3"><code>vscode</code></h3>
+
+                     <p class="doc-p">
+                        Controls automatic helper configuration for VS Code.
+                     </p>
+
+                     <ul class="doc-list">
+                        <li class="doc-list__item">
+                           <code>settings</code> — configure path aliases.
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>snippets</code> — install project snippets.
+                        </li>
+                     </ul>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- SERVER -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="server" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Local server</h2>
+
+                  <div class="doc-card doc-card--inline">
+
+                     <h3 class="doc-h3"><code>server</code></h3>
+
+                     <p class="doc-p">
+                        Controls the development server configuration and
+                        output behavior during builds.
+                     </p>
+
+                     <ul class="doc-list">
+
+                        <li class="doc-list__item">
+                           <code>path</code> — asset path format.
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>isassets</code> — output CSS/JS into assets folder.
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>buildforlocal</code> — bundle assets to open from file system.
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>hostname</code> — server hostname.
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>port</code> — server port.
+                        </li>
+
+                     </ul>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- VIDEO -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="video" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Video optimization pipeline</h2>
+
+                  <div class="doc-card doc-card--inline">
+
+                     <h3 class="doc-h3"><code>video</code></h3>
+
+                     <p class="doc-p">
+                        Controls video encoding and optimization during
+                        production builds.
+                     </p>
+
+                     <ul class="doc-list">
+
+                        <li class="doc-list__item">
+                           <code>enable</code> — enable video optimization.
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>srcDir</code> — source directory containing videos.
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>sizes</code> — generated video resolutions.
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>codecs</code> — enabled codecs (mp4 / webm / av1).
+                        </li>
+
+                        <li class="doc-list__item">
+                           <code>removeAudio</code> — removes audio track for autoplay.
+                        </li>
+
+                     </ul>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- IMAGES -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="images" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Images pipeline</h2>
+
+                  <div class="doc-card doc-card--inline">
+
+                     <h3 class="doc-h3"><code>images</code></h3>
+
+                     <p class="doc-p">
+                        Controls image resizing, optimization, responsive images
+                        and modern formats such as WebP or AVIF.
+                     </p>
+
+                     <ul class="doc-list">
+
+                        <li class="doc-list__item"><code>svgsprite</code></li>
+                        <li class="doc-list__item"><code>optimize.enable</code></li>
+                        <li class="doc-list__item"><code>optimize.sizes</code></li>
+                        <li class="doc-list__item"><code>modernformat.type</code></li>
+
+                     </ul>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- ALIASES -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="aliases" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Path aliases</h2>
+
+                  <div class="doc-card doc-card--inline">
+
+                     <h3 class="doc-h3"><code>aliases</code></h3>
+
+                     <p class="doc-p">
+                        Path aliases allow importing project files using short paths
+                        instead of long relative paths.
+                     </p>
+
+                     <div class="codeblock" data-codeblock="">
+
+                        <div class="codeblock__top">
+                           <div class="codeblock__file">Example aliases</div>
+                           <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                        </div>
+
+                        <pre class="codeblock__pre"><code class="codeblock__code">
+@components
+@js
+@styles
+@img
+@video
+@fonts
+@files
+</code></pre>
+
+                     </div>
+
+                  </div>
+
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- DOWNLOAD -->
+               <!-- ========================================================= -->
+
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Download Animmaster Vite Template and start building projects
+                     with a powerful development workflow and optimized build system.
+                  </p>
+
+                  <div class="doc-actions">
+
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+
+                     </a>
+
+                  </div>
+
+               </section>
+
+               <div class="doc-divider"></div>
+
+
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/instfonts.html">
+                     Next: Local fonts, icon fonts, and Google Fonts
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+
+            <aside class="doc-toc" aria-label="On this page">
+
+               <div class="doc-toc__box">
+
+                  <div class="doc-toc__title">On this page</div>
+
+                  <ol class="doc-toc__list">
+
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#where">Where to edit</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#quick">Quick reference</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#lang">Language</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#vscode">VS Code</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#server">Server</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#video">Video</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#images">Images</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#aliases">Aliases</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto="#download">Download</a></li>
+
+                  </ol>
+
+               </div>
+
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

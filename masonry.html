@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Masonry grid</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247395"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247395">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-masonrydoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Masonry grid
+               <span class="doc-hero__title-sub">Pinterest-like layout + filtering via Isotope</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               Masonry grid is a layout where items “pack” into columns and fill vertical gaps —
+               like Pinterest. In this template the masonry logic is built on top of <strong>Isotope</strong>,
+               so you can also add filtering, sorting, and more.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+   
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) What it is -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="intro" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What is masonry?</h2>
+
+                  <p class="doc-p">
+                     Masonry is a specific way of placing elements so they fill all available space inside
+                     structural columns. Instead of strict rows, items stack vertically and “flow” into gaps.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Why Isotope?</div>
+                     <div class="doc-callout__text">
+                        Isotope gives you a stable masonry algorithm plus extras like filtering and sorting —
+                        perfect for galleries, portfolios, product grids, and “Pinterest” walls.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Files are located in <code>src/components/layout/masonry</code>.
+                     Inside you’ll find:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS file with base settings and filtering logic.</li>
+                     <li class="doc-list__item">HTML example snippet.</li>
+                     <li class="doc-list__item">SCSS file for styling the grid and filter UI.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Basic usage -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="usage" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Basic usage</h2>
+
+                  <p class="doc-p">
+                     To enable the component, add <code>data-anim-masonry</code> to the masonry container,
+                     and <code>data-anim-masonry-item</code> to each item. JS will connect automatically.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Masonry — minimal markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div data-anim-masonry class="masonry"&gt;
+	&lt;div data-anim-masonry-item class="masonry__item"&gt;A&lt;/div&gt;
+	&lt;div data-anim-masonry-item class="masonry__item"&gt;B&lt;/div&gt;
+	&lt;div data-anim-masonry-item class="masonry__item"&gt;C&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Filtering -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="filtering" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Masonry with filtering</h2>
+
+                  <p class="doc-p">
+                     If you need filtering, create a filter list and add
+                     <code>data-anim-masonry-filter-link</code> to each link.
+                     For items, add <code>data-anim-masonry-filter</code> with the filter key.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Masonry — filtering example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;div class="masonry"&gt;
+
+	&lt;ul class="masonry__filter filter-masonry"&gt;
+		&lt;li class="filter-masonry__item"&gt;
+			&lt;a href="#" data-anim-masonry-filter-link="*" class="filter-masonry__link"&gt;All&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class="filter-masonry__item"&gt;
+			&lt;a href="#" data-anim-masonry-filter-link="a" class="filter-masonry__link"&gt;Filter A&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class="filter-masonry__item"&gt;
+			&lt;a href="#" data-anim-masonry-filter-link="b" class="filter-masonry__link"&gt;Filter B&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class="filter-masonry__item"&gt;
+			&lt;a href="#" data-anim-masonry-filter-link="c" class="filter-masonry__link"&gt;Filter C&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;div data-anim-masonry class="masonry__items"&gt;
+		&lt;div data-anim-masonry-item data-anim-masonry-filter="a" class="masonry__item"&gt;A&lt;/div&gt;
+		&lt;div data-anim-masonry-item data-anim-masonry-filter="b" class="masonry__item"&gt;B&lt;/div&gt;
+		&lt;div data-anim-masonry-item data-anim-masonry-filter="c" class="masonry__item"&gt;C&lt;/div&gt;
+	&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        You can extend the same idea for sorting (date, size, name) — Isotope supports it.
+                        Check Isotope docs for advanced options.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build masonry layouts with filtering and a clean component structure.
+                     Download the template and start shipping faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+               
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/swiper.html">
+                     Next: Swiper component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#intro">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#usage">Basic
+                           usage</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#filtering">Filtering</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Popup</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247394"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247394">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-popupdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Modal Window (Popup)
+               <span class="doc-hero__title-sub">Modals with focus trap, hash open, and YouTube support</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This component adds classic modal windows (“popups”) with accessibility-friendly behavior:
+               scroll lock, focus management, closing by ESC / overlay click, and optional YouTube autoplay.
+               Everything is controlled through HTML attributes — no manual initialization required.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+
+      
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) What it does -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="about" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">What the popup component does</h2>
+
+                  <p class="doc-p">
+                     When a user clicks an element with <code>data-anim-popup-link="popupName"</code>,
+                     the component finds the corresponding popup (by name) and opens it.
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">
+                        Adds <code>data-anim-popup-open</code> to the <code>&lt;body&gt;</code>.
+                     </li>
+                     <li class="doc-list__item">
+                        Locks page scroll (can be disabled in component settings if your build supports it).
+                     </li>
+                     <li class="doc-list__item">
+                        Moves focus into the popup and remembers the previously focused element.
+                     </li>
+                     <li class="doc-list__item">
+                        Closes by: close button (<code>data-anim-popup-close</code>), overlay click, or ESC.
+                     </li>
+                  </ul>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Files location</div>
+                     <div class="doc-callout__text">
+                        HTML/SCSS/JS files live in: <code>src/components/layout/popup/</code>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Connect the markup -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="include" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Include the popup markup</h2>
+
+                  <p class="doc-p">
+                     Add the popup HTML to your page using <code>&lt;include&gt;</code>.
+                     The component file already contains a base popup example.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Include popup component</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;include src="@components/layout/popup/popup.html"&gt;&lt;/include&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     In <code>popup.html</code> each modal root has the attribute
+                     <code>data-anim-popup="popupName"</code>. That value is the popup name.
+                     You can create multiple popups — just give each one a unique name.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Open & close -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="open-close" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Open and close a popup</h2>
+
+                  <p class="doc-p">
+                     To open a popup, add <code>data-anim-popup-link</code> to any trigger element and set the popup
+                     name.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Open popup by link/button</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;a href="#" data-anim-popup-link="popup"&gt;Open Popup&lt;/a&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     To close, use an element with <code>data-anim-popup-close</code> inside the popup.
+                     Overlay click and ESC are supported by default.
+                  </p>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Keep close buttons inside the popup content area so keyboard users can reach them easily.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Hash open -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="hash" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Open popup via URL hash</h2>
+
+                  <p class="doc-p">
+                     The component can open a popup via hash in the URL. For example, this will open the popup named
+                     <code>popup</code>:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Hash open example</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">http://localhost:1111/#popup</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) YouTube -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="youtube" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">YouTube video inside popup</h2>
+
+                  <p class="doc-p">
+                     You can open a YouTube video in a popup with autoplay. Add
+                     <code>data-anim-popup-youtube</code> to the popup trigger and pass the video ID.
+                  </p>
+
+                  <div class="doc-callout doc-callout--accent">
+                     <div class="doc-callout__title">Where to get the video ID?</div>
+                     <div class="doc-callout__text">
+                        For a link like <code>https://www.youtube.com/shorts/PQdR1VxI6Y8</code>,
+                        the ID is <code>PQdR1VxI6Y8</code>.
+                     </div>
+                  </div>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Open popup with YouTube autoplay</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;a
+	href="#"
+	data-anim-popup-link="popup"
+	data-anim-popup-youtube="PQdR1VxI6Y8"
+&gt;Watch video&lt;/a&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     If your popup is opened by hash or programmatically (not by a click trigger),
+                     you can attach the video ID directly to the popup root:
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Attach YouTube ID to popup root</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div
+	data-anim-popup="popup"
+	data-anim-popup-youtube="PQdR1VxI6Y8"
+	aria-hidden="true"
+	class="popup"
+&gt;
+	...
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <p class="doc-p">
+                     By default, the video is injected into the element marked with
+                     <code>data-anim-popup-content</code> (replacing its content).
+                     If you need a different placement, create a dedicated element and mark it with
+                     <code>data-anim-popup-youtube-place</code>.
+                  </p>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 6) Methods & events -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="api" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Methods and events</h2>
+
+                  <div class="doc-grid">
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Methods</h3>
+                        <p class="doc-p">
+                           You can control popups programmatically via a global object:
+                           <code>window.animPopup</code>.
+                        </p>
+
+                        <div class="codeblock" data-codeblock="">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Open a popup by name</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">window.animPopup.open('popup');</code></pre>
+                        </div>
+                     </div>
+
+                     <div class="doc-card doc-card--inline">
+                        <h3 class="doc-h3">Events</h3>
+                        <p class="doc-p">
+                           The popup system emits events on <code>document</code> so you can hook into lifecycle
+                           moments.
+                        </p>
+
+                        <ul class="doc-list">
+                           <li class="doc-list__item"><code>beforePopupOpen</code> — before open</li>
+                           <li class="doc-list__item"><code>afterPopupOpen</code> — after open</li>
+                           <li class="doc-list__item"><code>beforePopupClose</code> — before close</li>
+                           <li class="doc-list__item"><code>afterPopupClose</code> — after close</li>
+                        </ul>
+
+                        <div class="codeblock" data-codeblock="">
+                           <div class="codeblock__top">
+                              <div class="codeblock__file">Listen to popup events</div>
+                              <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                           </div>
+                           <pre class="codeblock__pre"><code class="codeblock__code">
+document.addEventListener("afterPopupOpen", function (e) {
+	// Current popup element:
+	const currentPopup = e.detail.popup;
+});</code></pre>
+                        </div>
+
+                        <div class="doc-callout doc-callout--warn">
+                           <div class="doc-callout__title">Note</div>
+                           <div class="doc-callout__text">
+                              If your actual global name differs in your project, search in the popup component JS
+                              and use the exported/global instance name from there.
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Want popups that work well by default: focus, scroll lock, overlay click, ESC close,
+                     and optional YouTube autoplay? Download the template and build faster.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+      
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/watcherdoc.html">
+                     Next: Component: Watcher
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#about">Overview</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#include">Include</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#open-close">Open & close</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#hash">Hash
+                           open</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#youtube">YouTube</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#api">Methods &
+                           events</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>

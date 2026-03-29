@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+	 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="./assets/img/favicon.ico">
+	<title>Add to card</title>  <script type="module" crossorigin src="./js/app.min.js?v=1774807247401"></script>
+  <link rel="stylesheet" crossorigin href="./css/app.min.css?v=1774807247401">
+</head>
+	<body>
+		<div class="wrapper">
+			
+      <header class="header" data-anim-header="" data-anim-header-scroll="">
+	<div class="header__container">
+		<nav class="menu__body">
+			<a class="menu__logo" href="/docs/index.html">
+				<img src="./assets/img/logo.jpg" aria-label="Animmaster Logo" width="50" height="50">
+			</a>
+			<ul class="menu__list">
+				<li class="menu__item">
+					<a class="menu__link" href="/docs/index.html">Documentation</a>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link menu__link--special" target="_blank" href="https://www.patreon.com/collection/1946808?view=condensed">Animmaster PRO Pack</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+   
+			<main class="page">
+				
+      <div data-anim-addtocartdoc="" class="doc">
+   <section class="doc-page box-padding">
+      <div class="doc-page__container">
+
+         <!-- ========================================================= -->
+         <!-- Top -->
+         <!-- ========================================================= -->
+         <div class="doc-top">
+            <a class="doc-top__back" href="/docs/index.html">← Back to Documentation</a>
+         </div>
+
+         <!-- ========================================================= -->
+         <!-- Hero -->
+         <!-- ========================================================= -->
+         <div class="doc-hero" id="top">
+            <p class="doc-hero__kicker">Documentation</p>
+
+            <h1 class="doc-hero__title">
+               Component: Cart (Add to cart)
+               <span class="doc-hero__title-sub">Quantity + optional “fly to cart” image animation</span>
+            </h1>
+
+            <p class="doc-hero__lead">
+               This component adds “add to cart” behavior with a live cart counter. Optionally, it can animate
+               the product image flying into the cart for a stronger UX cue.
+            </p>
+
+            <div class="doc-actions">
+               <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                  <span class="doc-btn__text doc-btn__text--default">
+                     Download <span>Animmaster</span> Vite Template
+                  </span>
+                  <span class="doc-btn__text doc-btn__text--hover">
+                     Save your time — start now
+                  </span>
+               </a>
+            </div>
+         </div>
+
+         <div class="doc-layout">
+            <article class="doc-content">
+
+               <!-- ========================================================= -->
+               <!-- 1) Location -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="location" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Component location</h2>
+
+                  <p class="doc-p">
+                     Files are located in <code>src/components/forms/addtocart</code>. Inside you’ll find:
+                  </p>
+
+                  <ul class="doc-list">
+                     <li class="doc-list__item">JS file with add-to-cart logic and optional animation.</li>
+                     <li class="doc-list__item">HTML example snippet.</li>
+                     <li class="doc-list__item">SCSS file for styling the cart UI and animation helpers.</li>
+                  </ul>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 2) Cart counter -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="counter" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Cart counter</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-addtocart</code> to the element that displays the cart quantity.
+                     The component will update this value automatically.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Cart quantity markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div class="cart"&gt;
+	&lt;span class="cart__quantity" data-anim-addtocart&gt;0&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 3) Add button -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="button" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Add to cart button</h2>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-addtocart-button</code> to your “Buy / Add to cart” button.
+                     On click, the cart counter will increase.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Button markup</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;button type="button" data-anim-addtocart-button&gt;Add to cart&lt;/button&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 4) Product wrapper + quantity -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="product" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Product wrapper &amp; quantity</h2>
+
+                  <p class="doc-p">
+                     To enable product-level features (quantity and image animation), wrap the product with
+                     <code>data-anim-addtocart-product</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Product wrapper</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-addtocart-product class="product"&gt;
+	...
+	&lt;button type="button" data-anim-addtocart-button&gt;Add to cart&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <h3 class="doc-h3">Quantity via input</h3>
+
+                  <p class="doc-p">
+                     Add <code>data-anim-addtocart-quantity</code> to an <code>&lt;input&gt;</code> that controls
+                     quantity.
+                     The entered value will be used when adding items.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Quantity input</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-addtocart-product class="product"&gt;
+	...
+	&lt;input data-anim-addtocart-quantity autocomplete="off" type="text" name="form[]" value="1"&gt;
+	&lt;button type="button" data-anim-addtocart-button&gt;Add to cart&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <h3 class="doc-h3">Quantity via “Quantity” component</h3>
+
+                  <p class="doc-p">
+                     You can also use the template’s Quantity component and still connect the value via
+                     <code>data-anim-addtocart-quantity</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Quantity component integration</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-addtocart-product class="product"&gt;
+	...
+	&lt;div data-anim-quantity class="quantity"&gt;
+		&lt;button data-anim-quantity-minus type="button" class="quantity__button quantity__button--minus"&gt;&lt;/button&gt;
+		&lt;div class="quantity__input"&gt;
+			&lt;input
+				data-anim-addtocart-quantity
+				data-anim-quantity-value
+				autocomplete="off"
+				type="text"
+				name="form[]"
+				value="1"&gt;
+		&lt;/div&gt;
+		&lt;button data-anim-quantity-plus type="button" class="quantity__button quantity__button--plus"&gt;&lt;/button&gt;
+	&lt;/div&gt;
+
+	&lt;button type="button" data-anim-addtocart-button&gt;Add to cart&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- 5) Fly-to-cart animation -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="animation" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Fly-to-cart image animation</h2>
+
+                  <p class="doc-p">
+                     To animate the product image flying into the cart, add <code>data-anim-addtocart-image</code>
+                     to the product’s <code>&lt;img&gt;</code>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Enable fly-to-cart</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">
+&lt;div data-anim-addtocart-product class="product"&gt;
+	...
+	&lt;img src="..." data-anim-addtocart-image alt="Image"&gt;
+	&lt;button type="button" data-anim-addtocart-button&gt;Add to cart&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+
+                  <h3 class="doc-h3">Animation speed</h3>
+
+                  <p class="doc-p">
+                     To control animation duration, set a value (milliseconds) on
+                     <code>data-anim-addtocart-image</code>. Default is <strong>500ms</strong>.
+                  </p>
+
+                  <div class="codeblock" data-codeblock="">
+                     <div class="codeblock__top">
+                        <div class="codeblock__file">Custom animation speed</div>
+                        <button class="codeblock__copy" type="button" data-copy="">Copy</button>
+                     </div>
+                     <pre class="codeblock__pre"><code class="codeblock__code">&lt;img src="..." data-anim-addtocart-image="1000" alt="Image"&gt;</code></pre>
+                  </div>
+
+                  <div class="doc-callout">
+                     <div class="doc-callout__title">Tip</div>
+                     <div class="doc-callout__text">
+                        Place the cart icon/counter in a stable location (header). The animation looks best when
+                        the destination doesn’t jump due to layout shifts.
+                     </div>
+                  </div>
+               </section>
+
+               <!-- ========================================================= -->
+               <!-- Download -->
+               <!-- ========================================================= -->
+               <section class="doc-section" id="download" data-anim-watcher="navigator">
+                  <h2 class="doc-h2">Download</h2>
+
+                  <p class="doc-p doc-p--margin-b">
+                     Build e-commerce UI faster: cart counter, quantity control, and a clean “fly to cart” animation.
+                     Download the template and start shipping today.
+                  </p>
+
+                  <div class="doc-actions">
+                     <a class="doc-btn doc-btn--primary doc-btn--pulse" href="https://www.patreon.com/collection/1946808?view=condensed" target="_blank" rel="noreferrer">
+                        <span class="doc-btn__text doc-btn__text--default">
+                           Download <span>Animmaster</span> Vite Template
+                        </span>
+                        <span class="doc-btn__text doc-btn__text--hover">
+                           Save your time — start now
+                        </span>
+                     </a>
+                  </div>
+
+             
+               </section>
+
+               <div class="doc-divider"></div>
+
+               <!-- ========================================================= -->
+               <!-- Next -->
+               <!-- ========================================================= -->
+               <nav class="doc-next">
+                  <a class="doc-next__link" href="/docs/map.html">
+                     Next: Map component
+                     <span class="doc-next__arrow">→</span>
+                  </a>
+               </nav>
+
+            </article>
+
+            <!-- ========================================================= -->
+            <!-- TOC -->
+            <!-- ========================================================= -->
+            <aside class="doc-toc" aria-label="On this page">
+               <div class="doc-toc__box">
+                  <div class="doc-toc__title">On this page</div>
+                  <ol class="doc-toc__list">
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#location">Location</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#counter">Cart
+                           counter</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#button">Add
+                           button</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#product">Product + quantity</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#animation">Fly-to-cart</a></li>
+                     <li><a class="doc-toc__link" href="#" data-anim-scrollto-header="" data-anim-scrollto="#download">Download</a></li>
+                  </ol>
+               </div>
+            </aside>
+
+         </div>
+      </div>
+   </section>
+</div>
+   
+			</main>
+			
+      <footer class="footer" data-anim-footer="">
+	<div class="footer__container">
+
+		<!-- BOTTOM -->
+		<div class="footer__bottom">
+
+			<p class="footer__copy">© 2026 Animmaster</p>
+
+			<div class="footer__bug">
+				<span>Found bug?</span>
+				<a href="mailto:animmasterstudio@gmail.com">
+					Report it
+				</a>
+			</div>
+
+			<div class="footer__author">
+				Crafted with <span>🤍</span> by
+				<a target="_blank" href="https://www.instagram.com/animmaster_studio?igsh=MXN0MXkycGxrbDlpag==">
+					Animmaster
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+</footer>
+   
+		</div>
+		
+	</body>
+</html>
