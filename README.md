@@ -10,4 +10,4 @@ This is a **white-label Vite template** designed for fast development of modern 
 
 Includes a custom animation system and components 
 
-Live LINK - https://animmaster.github.io/docs/index.html
+Live LINK - https://animmaster.github.io/docs/
