@@ -6,8 +6,8 @@ A clean and scalable frontend starter with built-in animation system and UI comp
 
 ## 🚀 About
 
-This is a **white-label Vite template** designed for fast development of modern websites.
-
+This is documentation for **My Own Vite template** designed for fast development of modern websites.
 Includes a custom animation system and components 
 
-Live LINK - https://animmaster.github.io/docs/
+Docs Live LINK - https://animmaster.github.io/docs/
+Get Animmaster Vite Template - https://www.patreon.com/posts/148360732?collection=1946808
