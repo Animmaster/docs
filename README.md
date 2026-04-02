@@ -10,4 +10,5 @@ This is documentation for **My Own Vite template** designed for fast development
 Includes a custom animation system and components 
 
 Docs Live LINK - https://animmaster.github.io/docs/
+
 Get Animmaster Vite Template - https://www.patreon.com/posts/148360732?collection=1946808
