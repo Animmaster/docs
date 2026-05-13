@@ -11,4 +11,4 @@ Includes a custom animation system and components
 
 Docs Live LINK - https://animmaster.github.io/docs/
 
-Get Animmaster Vite Template - https://www.patreon.com/posts/148360732?collection=1946808
+Get Animmaster Vite Template - [https://www.patreon.com/posts/148360732?collection=1946808](https://www.patreon.com/posts/148360732?collection=2142230)
